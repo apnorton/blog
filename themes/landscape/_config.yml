@@ -1,0 +1,30 @@
+# Header
+menu:
+  Blog: /blog
+  'Web Home': /
+  Archives: /blog/archives
+rss: /blog/atom.xml
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+# Sidebar
+sidebar: right
+widgets:
+- recent_posts
+- category
+- tagcloud
+- archive
+
+# RSS feed generator
+feed:
+  type: atom
+  path: blog/atom.xml
+  limit: 20
+  hub: 
+
+# Miscellaneous
+google_analytics: UA-63901553-2
+favicon: /favicon.png
+twitter: _apnorton

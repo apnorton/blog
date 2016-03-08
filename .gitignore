@@ -1,3 +1,4 @@
+# Don't upload all the background stuff to the website
 .DS_Store
 Thumbs.db
 db.json
@@ -5,3 +6,11 @@ db.json
 node_modules/
 public/
 .deploy*/
+2015/
+archives/
+css/
+fancybox/
+js/
+scaffolds/
+index.html
+package.json
