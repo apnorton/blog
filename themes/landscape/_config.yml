@@ -1,13 +1,13 @@
 # Header
 menu:
-  Blog: /blog
-  'Web Home': /
-  Archives: /blog/archives
+  Blog: /
+  'Web Home': http://www.apnorton.com/
+  Archives: /archives
 rss: /blog/atom.xml
 
 # Content
 excerpt_link: Read More
-fancybox: true
+fancybox: true 
 
 # Sidebar
 sidebar: right
@@ -20,7 +20,7 @@ widgets:
 # RSS feed generator
 feed:
   type: atom
-  path: blog/atom.xml
+  path: /blog/atom.xml
   limit: 20
   hub: 
 

@@ -1,0 +1,10 @@
+digraph G {
+  // Style information for nodes
+  A [style="filled", color=".05 .3 1.0"]
+
+  // Edge declarations
+  A -> {B, C};
+  D -> E [label="-1"];
+  E -> F [label="3"];
+  F -> D [label="10"];
+}
