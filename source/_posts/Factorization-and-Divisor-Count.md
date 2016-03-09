@@ -33,6 +33,7 @@ Example:  Consider $N = 20$.  In this case, $N$ has $6$ divisors; to determine t
 
 $$\{2^0 5^0, 2^1 5^0,2^2 5^0,2^0 5^1,2^1 5^1,2^2 5^1\}$$
 
+<!-- more -->
 
 The Program
 ---

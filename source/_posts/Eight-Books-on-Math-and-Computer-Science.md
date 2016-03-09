@@ -42,6 +42,7 @@ A Mathematician's Apology
 
 When a mathematician with Hardy's stature writes a book on why he studies math, it's probably advisable to read it!  Multiple professors of mine have said it's a book any mathematician should read and I wholeheartedly agree.  It's really short (the printing I've linked above is only 154 pages), but the content is amazing.  Hardy addresses the complaints many have with pure math and embodies the spirit of "doing mathematics for mathematics' sake."  If you are thinking about pursuing a theoretical route in either CS or math, I highly recommend you read this book.
 
+<!-- more -->
 
 The Code Book
 ---

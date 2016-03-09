@@ -1,6 +1,11 @@
 title: Visualizing Graphs in Program Output
 date: 2016-03-08 17:11:35
 tags:
+  - computer-science
+  - math
+categories:
+  - computer-science
+  - tools
 ---
 
 Many computer science problems utilize [graph][1]-based data structures.  Their use can range from explicit inclusion in an algorithm-centric problem (like path-finding) to a more "behind-the-scenes" presence in Bayesian networks or descriptions of finite automata.  Unfortunately, visualizing large graphs can be difficult to do, especially for debugging.  Unlike lists or dictionaries, which can be represented clearly by plain text printing, depicting a graph tends to require more graphics overhead than is reasonable for most programmers to write simply for debugging purposes.  I've found that [Graphviz][2], a free graph visualization utility, can be quite useful in debugging graph-related programs.
@@ -24,6 +29,8 @@ The below is a fairly representative DOT file to demonstrate some of the capabil
 This creates a directed graph (also called a *digraph*) with six nodes and two connected components.  Some of the edges have labels, and one of the nodes is colored.  After you've copied (or downloaded) this file, open up a terminal to the directory with `firstgraph.dot` in it and run `$ dot firstgraph.dot -Tpng -o firstgraph.png`.  The resulting image file should look something like the below:
 
 {% asset_img firstgraph.jpg "The rendered `firstgraph.dot`" %}
+
+<!-- more -->
 
 What did that terminal command do?  The `dot` utility is used for producing an image corresponding to a *directed* graph.  (If you want to create the diagram for an undirected graph, consider using `neato`, or the other variants listed in `man dot`.)  The `-Tpng` flag will produce PNG output image output, and `-o firstgraph.png` provides the output name.  If you don't include the `-o` flag, `dot` will send its output straight to `stdout`, which will produce a lot of garbage on the terminal.
 

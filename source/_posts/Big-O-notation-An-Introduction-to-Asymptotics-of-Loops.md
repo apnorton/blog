@@ -44,6 +44,7 @@ $$1 + 1 + \underbrace{\sum\_{i = 0}^N 2}\_{\text{loop operations}} + 1 = 3 + 2N$
 
 Thus, it will take $3+2N$ operations to perform that method, given an input $N$.  If each operation takes $2\times 10^{-9}$ (about the speed of a 2 GHz processor), it would take 5 seconds to run this program for an input of $N=10^{10}$.
 
+<!-- more -->
 
 Let's make that easier...
 ---

@@ -42,6 +42,8 @@ D_n &= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
 
 This is significant because we can use the explicit formulation for computing single values of derangements, or we can use dynamic programming to rapidly compute $D_n$ for relatively small $n$.
 
+<!-- more -->
+
 Problem Approach
 ---
 
