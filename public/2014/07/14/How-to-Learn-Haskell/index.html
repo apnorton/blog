@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>How to Learn Haskell | apnorton | blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="To grow my programming repertoire, I decided to learn a functional language; at the recommendation of a friend, I selected Haskell. Thus far, it seems great.  As a mathematician at heart, I love the w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Learn Haskell">
+<meta property="og:url" content="http://www.apnorton.com/blog/2014/07/14/How-to-Learn-Haskell/index.html">
+<meta property="og:site_name" content="apnorton | blog">
+<meta property="og:description" content="To grow my programming repertoire, I decided to learn a functional language; at the recommendation of a friend, I selected Haskell. Thus far, it seems great.  As a mathematician at heart, I love the w">
+<meta property="og:updated_time" content="2015-12-25T04:48:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to Learn Haskell">
+<meta name="twitter:description" content="To grow my programming repertoire, I decided to learn a functional language; at the recommendation of a friend, I selected Haskell. Thus far, it seems great.  As a mathematician at heart, I love the w">
+<meta name="twitter:creator" content="@_apnorton">
+  
+    <link rel="alternative" href="/blog/atom.xml" title="apnorton | blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-63901553-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">apnorton | blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Blog</a>
+        
+          <a class="main-nav-link" href="http://www.apnorton.com/">Web Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.apnorton.com/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-How-to-Learn-Haskell" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2014/07/14/How-to-Learn-Haskell/" class="article-date">
+  <time datetime="2014-07-15T00:55:08.000Z" itemprop="datePublished">2014-07-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/computer-science/">computer-science</a>►<a class="article-category-link" href="/blog/categories/computer-science/programming-languages/">programming-languages</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      How to Learn Haskell
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>To grow my programming repertoire, I decided to learn a functional language; at the recommendation of a friend, I selected <a href="http://www.haskell.org/haskellwiki/Haskell" target="_blank" rel="external">Haskell</a>. Thus far, it seems great.  As a mathematician at heart, I love the way that the notation and language constructs resemble math (list comprehensions, tuples, function composition, etc).  In this blog post, I will outline the major resources I am using to learn Haskell.</p>
+<p>To learn Haskell, I am using the ebook <a href="http://learnyouahaskell.com/chapters" target="_blank" rel="external"><em>Learn You a Haskell for Great Good</em></a>.  Yes–terrible grammar in the title, but it’s (fairly) grammatically correct on the inside.  This is a great introduction to Haskell, although I’d highly recommend prior knowledge of another programming language like Java or C++.</p>
+<p>Unfortunately, that ebook is somewhat lacking in practice problems.  It does have examples, but there isn’t a true “exercise” section like one would find in a textbook.  This is a common fault with online programming tutorials; to be honest, creating a good exercise set is <em>hard</em> work.  To remedy this problem, I turned to a favorite site of mine, <a href="http://www.hackerrank.com" target="_blank" rel="external">HackerRank.com</a>.  While designed for competitive programmers, this site also has an “introductory” set of functional programming challenges (see <a href="https://www.hackerrank.com/categories/fp/intro" target="_blank" rel="external">here</a>).  These range in difficulty from very easy to extremely hard.  This provides a great compliment to the tutorial I referenced above.</p>
+<p>Finally, one last resource I am going to use after finishing <em>Learn You a Haskell</em> is a <a href="http://shuklan.com/haskell/" target="_blank" rel="external">set of lectures</a> by former University of Virginia student-teacher <a href="http://shukla.io/" target="_blank" rel="external">Nishant Shukla</a>.  Although I have not been able to view them in great detail, they appear to present a great introduction to Haskell.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.apnorton.com/blog/blog/2014/07/14/How-to-Learn-Haskell/" data-id="ciln8c5de001nie9nyrroh2zp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/functional-programming/">functional-programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/websites/">websites</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2015/06/09/Eight-Books-on-Math-and-Computer-Science/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Eight Books on Math and Computer Science
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2014/07/14/Factorization-and-Divisor-Count/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Factorization and Divisor Count</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/">Visualizing Graphs in Program Output</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2015/10/15/Deranged-Exams-An-ICPC-Problem/">Deranged Exams: An ICPC Problem</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2015/06/09/Eight-Books-on-Math-and-Computer-Science/">Eight Books on Math and Computer Science</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2014/07/14/How-to-Learn-Haskell/">How to Learn Haskell</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2014/07/14/Factorization-and-Divisor-Count/">Factorization and Divisor Count</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/book-reviews/">book-reviews</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/">computer-science</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/algorithms/">algorithms</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/contests/">contests</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/programming-languages/">programming-languages</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/tools/">tools</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/">math</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/computational-geometry/">computational-geometry</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/number-theory/">number-theory</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/algorithms/" style="font-size: 16.67px;">algorithms</a> <a href="/blog/tags/books/" style="font-size: 10px;">books</a> <a href="/blog/tags/computer-science/" style="font-size: 13.33px;">computer-science</a> <a href="/blog/tags/contests/" style="font-size: 10px;">contests</a> <a href="/blog/tags/functional-programming/" style="font-size: 10px;">functional-programming</a> <a href="/blog/tags/general-computing/" style="font-size: 10px;">general-computing</a> <a href="/blog/tags/math/" style="font-size: 20px;">math</a> <a href="/blog/tags/meta/" style="font-size: 10px;">meta</a> <a href="/blog/tags/number-theory/" style="font-size: 10px;">number-theory</a> <a href="/blog/tags/project-euler/" style="font-size: 10px;">project-euler</a> <a href="/blog/tags/websites/" style="font-size: 10px;">websites</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/07/">July 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/05/">May 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Andrew Norton<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Blog</a>
+  
+    <a href="http://www.apnorton.com/" class="mobile-nav-link">Web Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+  </div>
+</body>
+</html>
