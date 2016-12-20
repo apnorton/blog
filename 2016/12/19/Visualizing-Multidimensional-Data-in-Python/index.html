@@ -16,7 +16,7 @@
 <meta property="og:image" content="http://www.apnorton.com/blog/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/output_18_0.png">
 <meta property="og:image" content="http://www.apnorton.com/blog/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/output_21_0.png">
 <meta property="og:image" content="http://www.apnorton.com/blog/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/output_23_0.png">
-<meta property="og:updated_time" content="2016-12-20T01:58:59.902Z">
+<meta property="og:updated_time" content="2016-12-20T02:31:09.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Visualizing Multidimensional Data in Python">
 <meta name="twitter:description" content="Nearly everyone is familiar with two-dimensional plots, and most college students in the hard sciences are familiar with three dimensional plots.  However, modern datasets are rarely two- or three-dim">
@@ -115,6 +115,7 @@ ga('send', 'pageview');
 <p>First, we’ll generate some random 2D data using <code>sklearn.samples_generator.make_blobs</code>.  We’ll create three classes of points and plot each class in a different color.  After running the following code, we have datapoints in <code>X</code>, while classifications are in <code>y</code>.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X, y = make_blobs(n_samples=<span class="number">200</span>, centers=<span class="number">3</span>, n_features=<span class="number">2</span>, random_state=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 <p>To create a 2D scatter plot, we simply use the <code>scatter</code> function from <code>matplotlib</code>.  Since we want each class to be a separate color, we use the <code>c</code> parameter to set the datapoint color according to the <code>y</code> (class) vector. </p>
+<a id="more"></a>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(X[:,<span class="number">0</span>], X[:,<span class="number">1</span>], c=y)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <img src="/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/output_7_0.png" alt="2D Scatter Plot with Colors" title="2D Scatter Plot with Colors">
 <h2 id="n-dimensional-dataset-Wine"><a href="#n-dimensional-dataset-Wine" class="headerlink" title="n-dimensional dataset: Wine"></a>n-dimensional dataset: Wine</h2><p>In the rest of this post, we will be working with the <a href="https://archive.ics.uci.edu/ml/datasets/Wine" target="_blank" rel="external">Wine</a> dataset from the UCI Machine Learning Repository.  I selected this dataset because it has three classes of points and a thirteen-dimensional feature set, yet is still fairly small.</p>
