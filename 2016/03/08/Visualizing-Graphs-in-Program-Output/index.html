@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Visualizing Graphs in Program Output | apnorton | blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Many computer science problems utilize graph-based data structures.  Their use can range from explicit inclusion in an algorithm-centric problem (like path-finding) to a more “behind-the-scenes” prese">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Visualizing Graphs in Program Output">
+<meta property="og:url" content="http://www.apnorton.com/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/index.html">
+<meta property="og:site_name" content="apnorton | blog">
+<meta property="og:description" content="Many computer science problems utilize graph-based data structures.  Their use can range from explicit inclusion in an algorithm-centric problem (like path-finding) to a more “behind-the-scenes” prese">
+<meta property="og:image" content="http://www.apnorton.com/blog/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/firstgraph.jpg">
+<meta property="og:image" content="http://www.apnorton.com/blog/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/rig_small.jpg">
+<meta property="og:updated_time" content="2016-12-19T22:55:04.718Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Visualizing Graphs in Program Output">
+<meta name="twitter:description" content="Many computer science problems utilize graph-based data structures.  Their use can range from explicit inclusion in an algorithm-centric problem (like path-finding) to a more “behind-the-scenes” prese">
+<meta name="twitter:image" content="http://www.apnorton.com/blog/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/firstgraph.jpg">
+<meta name="twitter:creator" content="@_apnorton">
+  
+    <link rel="alternative" href="/blog/atom.xml" title="apnorton | blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-63901553-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">apnorton | blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Blog</a>
+        
+          <a class="main-nav-link" href="http://www.apnorton.com/">Web Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.apnorton.com/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Visualizing-Graphs-in-Program-Output" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/" class="article-date">
+  <time datetime="2016-03-08T22:11:35.000Z" itemprop="datePublished">2016-03-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/computer-science/">computer-science</a>►<a class="article-category-link" href="/blog/categories/computer-science/tools/">tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Visualizing Graphs in Program Output
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Many computer science problems utilize <a href="https://en.wikipedia.org/wiki/Graph_%28discrete_mathematics%29" target="_blank" rel="external">graph</a>-based data structures.  Their use can range from explicit inclusion in an algorithm-centric problem (like path-finding) to a more “behind-the-scenes” presence in Bayesian networks or descriptions of finite automata.  Unfortunately, visualizing large graphs can be difficult to do, especially for debugging.  Unlike lists or dictionaries, which can be represented clearly by plain text printing, depicting a graph tends to require more graphics overhead than is reasonable for most programmers to write simply for debugging purposes.  I’ve found that <a href="http://graphviz.org/" target="_blank" rel="external">Graphviz</a>, a free graph visualization utility, can be quite useful in debugging graph-related programs.</p>
+<h2 id="Installing-Graphviz"><a href="#Installing-Graphviz" class="headerlink" title="Installing Graphviz"></a>Installing Graphviz</h2><p>If you’re on a Debian-based Linux OS (e.g. Ubuntu), you can install Graphviz using <code>apt-get</code>.  Just run <code>$ sudo apt-get install graphviz</code> and you’ll have everything you need to complete the steps in this blog post.  Mac OS X users can use <code>brew</code> equivalently.</p>
+<p>Windows users should install using a binary downloaded from the <a href="http://graphviz.org/Download_windows.php" target="_blank" rel="external">Graphviz Windows page</a>, but there might be some issues with setting the <code>PATH</code> variable for running in the commandline.</p>
+<h2 id="Making-a-basic-graph"><a href="#Making-a-basic-graph" class="headerlink" title="Making a basic graph"></a>Making a basic graph</h2><p>Once you’ve installed, the next thing you’ll want to do is create a basic graph to ensure the installation succeeded and to gain practice using Graphviz tools.  We do this by creating a <code>*.dot</code> file that describes the graph we wish to display.  If you’re the type of person who likes to jump right in and experiment first before reading too much, or if you love formal language specification, the <a href="http://www.graphviz.org/content/dot-language" target="_blank" rel="external">DOT grammar</a> is fairly readable and can give a quick introduction to creating DOT files.</p>
+<p>The below is a fairly representative DOT file to demonstrate some of the capabilities of Graphviz. Open your favorite text editor, copy/paste it in, and save it as <code>firstgraph.dot</code>:</p>
+<figure class="highlight java"><figcaption><span>firstgraph.dot</span><a href="/blog/downloads/code/firstgraph.dot">view raw</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">digraph G {</span><br><span class="line">  <span class="comment">// Style information for nodes</span></span><br><span class="line">  A [style=<span class="string">"filled"</span>, color=<span class="string">".05 .3 1.0"</span>]</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Edge declarations</span></span><br><span class="line">  A -&gt; {B, C};</span><br><span class="line">  D -&gt; E [label=<span class="string">"-1"</span>];</span><br><span class="line">  E -&gt; F [label=<span class="string">"3"</span>];</span><br><span class="line">  F -&gt; D [label=<span class="string">"10"</span>];</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>This creates a directed graph (also called a <em>digraph</em>) with six nodes and two connected components.  Some of the edges have labels, and one of the nodes is colored.  After you’ve copied (or downloaded) this file, open up a terminal to the directory with <code>firstgraph.dot</code> in it and run <code>$ dot firstgraph.dot -Tpng -o firstgraph.png</code>.  The resulting image file should look something like the below:</p>
+<img src="/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/firstgraph.jpg" alt="The rendered `firstgraph.dot`" title="The rendered `firstgraph.dot`">
+<a id="more"></a>
+<p>What did that terminal command do?  The <code>dot</code> utility is used for producing an image corresponding to a <em>directed</em> graph.  (If you want to create the diagram for an undirected graph, consider using <code>neato</code>, or the other variants listed in <code>man dot</code>.)  The <code>-Tpng</code> flag will produce PNG output image output, and <code>-o firstgraph.png</code> provides the output name.  If you don’t include the <code>-o</code> flag, <code>dot</code> will send its output straight to <code>stdout</code>, which will produce a lot of garbage on the terminal.</p>
+<h2 id="Creating-a-DOT-File-with-Python"><a href="#Creating-a-DOT-File-with-Python" class="headerlink" title="Creating a DOT File with Python"></a>Creating a DOT File with Python</h2><p>Most recently, I used Graphviz to depict the output of a graph coloring (approximation) algorithm within the register allocation routine for a compiler.  I wanted to make sure that each pair of adjacent nodes never shared the same color; looking at an adjacency list and checking the coloring by hand would have been difficult; however, by having my program create a DOT file describing the graph coloring, I can check the results at a glance:</p>
+<img src="/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/rig_small.jpg" alt="Register interference graph (compiled with circo)" title="Register interference graph (compiled with circo)">
+<p>This only required a few lines of Python code (see below), but produces very useful debugging information.  The below assumes we represent a graph as a dictionary that maps a vertex label to a set of adjacent vertex labels (essentially an adjacency list, but more pythonic), and writes the output to a file named <code>rig.dot</code>.</p>
+<figure class="highlight python"><figcaption><span>graphviz_dot_output.py</span><a href="/blog/downloads/code/graphviz_dot_output.py">view raw</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="comment"># export_graph()</span></span><br><span class="line"><span class="comment">#   Saves the graph to a dot file</span></span><br><span class="line"><span class="comment">#   graph : a mapping of vertices to sets of vertices</span></span><br><span class="line"><span class="comment">#           (adjacency map form)</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">export_graph</span><span class="params">(graph, color=None)</span>:</span></span><br><span class="line">  <span class="comment"># Map integer colorings to graphviz colors</span></span><br><span class="line">  cmap = {  </span><br><span class="line">           <span class="number">0</span> : <span class="string">'brown'</span>,</span><br><span class="line">           <span class="number">1</span> : <span class="string">'maroon2'</span>, </span><br><span class="line">           <span class="number">2</span> : <span class="string">'orangered'</span>, </span><br><span class="line">           <span class="number">3</span> : <span class="string">'crimson'</span>,</span><br><span class="line">           <span class="number">4</span> : <span class="string">'lightseagreen'</span>,</span><br><span class="line">           <span class="number">5</span> : <span class="string">'gold'</span>, </span><br><span class="line">           <span class="number">6</span> : <span class="string">'cyan'</span>, </span><br><span class="line">           <span class="number">7</span> : <span class="string">'plum'</span>,</span><br><span class="line">           <span class="number">8</span> : <span class="string">'salmon'</span></span><br><span class="line">         }</span><br><span class="line"></span><br><span class="line">  <span class="keyword">with</span> open(<span class="string">'rig.dot'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">'graph G {\n'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># For each vertex u in the graph</span></span><br><span class="line">    <span class="keyword">for</span> u <span class="keyword">in</span> graph.keys():</span><br><span class="line">      <span class="comment"># Add coloring information</span></span><br><span class="line">      <span class="keyword">if</span> color: </span><br><span class="line">        f.write(<span class="string">'  "%s" [color=%s, style=filled];\n'</span> % (u, cmap[color[u]]));</span><br><span class="line"></span><br><span class="line">      <span class="comment"># For each neighbor v of u, add the edge</span></span><br><span class="line">      <span class="keyword">for</span> v <span class="keyword">in</span> graph[u]: </span><br><span class="line">        <span class="keyword">if</span> (u &lt; v):</span><br><span class="line">          f.write(<span class="string">'  "%s" -- "%s";\n'</span> % (u, v))</span><br><span class="line"></span><br><span class="line">    f.write(<span class="string">'}\n'</span>)</span><br></pre></td></tr></table></figure>
+<p>You’ll notice that the shape of the graph above is different than the shape of the first graph I showed.  Instead of using <code>dot</code> to produce the output image for this graph, I instead used <code>circo</code> (which attempts to draw the graph using a circular layout) and used a command line argument to ensure <a href="http://stackoverflow.com/a/13420913/1110928" target="_blank" rel="external">nodes wouldn’t overlap</a>.  The resulting command was <code>$ circo -Goverlap=scale rig.dot -Tpng -o rig.png</code>.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Graphs are an integral data structure for many computer science problems, yet are usually difficult to represent pictorially.  Graphviz can help reduce the amount of effort required to produce valuable debug output. In this post, I’ve provided a short example of the DOT format and some example code to output a graph in DOT form.  </p>
+<p>For users who want more detailed information on how to use Graphviz, I strongly recommend the <a href="https://www.ocf.berkeley.edu/~eek/index.html/tiny_examples/thinktank/src/gv1.7c/doc/dotguide.pdf" target="_blank" rel="external">DOT User’s Manual</a> and reading the manpage (run <code>$ man dot</code> in the terminal).</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.apnorton.com/blog/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/" data-id="ciwwuvgdg000i6zgckem66mox" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/computer-science/">computer-science</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/math/">math</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Visualizing Multidimensional Data in Python
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2015/10/15/Deranged-Exams-An-ICPC-Problem/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Deranged Exams: An ICPC Problem</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/">Visualizing Multidimensional Data in Python</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/">Visualizing Graphs in Program Output</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2015/10/15/Deranged-Exams-An-ICPC-Problem/">Deranged Exams: An ICPC Problem</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2015/06/09/Eight-Books-on-Math-and-Computer-Science/">Eight Books on Math and Computer Science</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2014/07/14/How-to-Learn-Haskell/">How to Learn Haskell</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/book-reviews/">book-reviews</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/">computer-science</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/algorithms/">algorithms</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/contests/">contests</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/programming-languages/">programming-languages</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/tools/">tools</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/">math</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/computational-geometry/">computational-geometry</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/number-theory/">number-theory</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/algorithms/" style="font-size: 15px;">algorithms</a> <a href="/blog/tags/books/" style="font-size: 10px;">books</a> <a href="/blog/tags/computer-science/" style="font-size: 15px;">computer-science</a> <a href="/blog/tags/contests/" style="font-size: 10px;">contests</a> <a href="/blog/tags/data/" style="font-size: 10px;">data</a> <a href="/blog/tags/functional-programming/" style="font-size: 10px;">functional-programming</a> <a href="/blog/tags/general-computing/" style="font-size: 10px;">general-computing</a> <a href="/blog/tags/math/" style="font-size: 20px;">math</a> <a href="/blog/tags/meta/" style="font-size: 10px;">meta</a> <a href="/blog/tags/number-theory/" style="font-size: 10px;">number-theory</a> <a href="/blog/tags/project-euler/" style="font-size: 10px;">project-euler</a> <a href="/blog/tags/websites/" style="font-size: 10px;">websites</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/07/">July 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/05/">May 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Andrew Norton<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Blog</a>
+  
+    <a href="http://www.apnorton.com/" class="mobile-nav-link">Web Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+  </div>
+</body>
+</html>
