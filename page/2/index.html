@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>apnorton | blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="apnorton | blog">
+<meta property="og:url" content="http://www.apnorton.com/blog/page/2/index.html">
+<meta property="og:site_name" content="apnorton | blog">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="apnorton | blog">
+<meta name="twitter:description">
+<meta name="twitter:creator" content="@_apnorton">
+  
+    <link rel="alternative" href="/blog/atom.xml" title="apnorton | blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-63901553-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">apnorton | blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Blog</a>
+        
+          <a class="main-nav-link" href="http://www.apnorton.com/">Web Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.apnorton.com/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Big-O-notation-An-Introduction-to-Asymptotics-of-Loops" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2014/06/09/Big-O-notation-An-Introduction-to-Asymptotics-of-Loops/" class="article-date">
+  <time datetime="2014-06-10T03:28:45.000Z" itemprop="datePublished">2014-06-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/computer-science/">computer-science</a>►<a class="article-category-link" href="/blog/categories/computer-science/algorithms/">algorithms</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2014/06/09/Big-O-notation-An-Introduction-to-Asymptotics-of-Loops/">&quot;Big-O&quot; notation: An Introduction to Asymptotics of Loops</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Algorithmic efficiency is imperative for success in programming competitions; your programs must be accurate and fast.  To help evaluate algorithms for speed, computer scientists focus on what is called  “asymptotics,” or “asymptotic analysis.”  The key question answered by asymptotics is: <strong>“When your input gets <em>really</em> big, how many steps does your program take?”</strong>  This post seeks to explain basic asymptotic analysis and its application to computing simple program runtime.</p>
+<p>The underlying principle of asymptotic analysis is that a program’s runtime depends on the number of <em>elementary operations</em> it performs.  The fewer elementary operations, the faster the program (and vice-versa).  What do I mean by “elementary operation?”  By this, I refer to any operation such that the runtime is not affected by the input size.  This is more commonly referred to as a <em>constant-time</em> operation.  Examples of such operations are assignment, basic arithmetic operations (<code>+, -, *, /, %</code>), accessing an array element, increment/decrement operations, function returns, and boolean expressions. </p>
+<h2 id="A-First-Example"><a href="#A-First-Example" class="headerlink" title="A First Example"></a>A First Example</h2><p>So, a good way of gauging the runtime of a program is to count the number of elementary operations it performs.  Let’s jump right in by analyzing a simple program. </p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">int</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span>(i &lt; N) &#123;</span><br><span class="line">    i++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Obviously, this program always returns $N$, so the loop is unnecessary.  However, let’s just analyze the method as-is.</p>
+<p>Lines 2 and 7 each contribute one constant-time operation.  The loop contributes two constant-time operations per iteration (one for the comparison, one for the increment), plus one extra constant-time operation for the final comparison that terminates the loop.  So, the total number of operations is:</p>
+<p>$$1 + 1 + \underbrace{\sum_{i = 0}^N 2}_{\text{loop operations}} + 1 = 3 + 2N$$</p>
+<p>(Notice how I used sigma (summation) notation for counting a loop’s operation. This is useful, because loops and sigma notation behave in much the same way.)</p>
+<p>Thus, it will take $3+2N$ operations to perform that method, given an input $N$.  If each operation takes $2\times 10^{-9}$ (about the speed of a 2 GHz processor), it would take 5 seconds to run this program for an input of $N=10^{10}$.</p>
+        
+          <p class="article-more-link">
+            <a href="/blog/2014/06/09/Big-O-notation-An-Introduction-to-Asymptotics-of-Loops/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.apnorton.com/blog/blog/2014/06/09/Big-O-notation-An-Introduction-to-Asymptotics-of-Loops/" data-id="ciwwwnyd400099igc6w60b5ku" class="article-share-link">Share</a>
+      
+        <a href="http://www.apnorton.com/blog/blog/2014/06/09/Big-O-notation-An-Introduction-to-Asymptotics-of-Loops/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/math/">math</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Greens-Theorem-and-The-Area-of-Polygons" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2014/06/05/Greens-Theorem-and-The-Area-of-Polygons/" class="article-date">
+  <time datetime="2014-06-05T22:48:45.000Z" itemprop="datePublished">2014-06-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/math/">math</a>►<a class="article-category-link" href="/blog/categories/math/computational-geometry/">computational-geometry</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2014/06/05/Greens-Theorem-and-The-Area-of-Polygons/">Green&#39;s Theorem and the Area of Polygons</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I am an avid member of the <a href="http://math.stackexchange.com" target="_blank" rel="external">Math.StackExchange</a> community.  We have recently reached a milestone, as our request to create a site blog has been approved by the Stack Exchange administration. I volunteered to write a post which I believe should be useful to competition programmers.</p>
+<p>Using Green’s Theorem, <a href="http://math.blogoverflow.com/2014/06/04/greens-theorem-and-area-of-polygons/" target="_blank" rel="external">this post</a> derives a formula for the area of any simple polygon, dependent solely on the coordinates of the vertices.  This is useful for some computational geometry problems in programming; for example, the formula can be used to compute the area of the <a href="https://en.wikipedia.org/wiki/Convex_hull" target="_blank" rel="external">convex hull</a> of a set of points.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.apnorton.com/blog/blog/2014/06/05/Greens-Theorem-and-The-Area-of-Polygons/" data-id="ciwwwnydl000j9igcn4ncyn9h" class="article-share-link">Share</a>
+      
+        <a href="http://www.apnorton.com/blog/blog/2014/06/05/Greens-Theorem-and-The-Area-of-Polygons/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/math/">math</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Hello-World" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2014/05/23/Hello-World/" class="article-date">
+  <time datetime="2014-05-24T03:58:00.000Z" itemprop="datePublished">2014-05-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2014/05/23/Hello-World/">Hello World!</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>After managing a fairly successful blog for many years about competitive robotics, I am attempting to re-brand myself as I begin my studies in the field of Computer Science and Mathematics.</p>
+<p>This blog will be the place I post interesting pieces of code I either develop or find, as well as math concepts useful to competitive programmers.  This blog will focus heavily on ACM-style competitions, and may occasionally contain hints or my solutions to problems from sites like USACO or UVA Online Judge.  I will attempt to post most of my code from here on a GitHub repository, but I’m still experimenting with that.</p>
+<p>Java is my “native language,” although I know Visual BASIC, C++ to a fair extent (few people can actually say they “really know” C++), and some Python.  I’ll try to mix up the languages I post (I’ll have a tag for each language), but I predict most of my posts will be Java-oriented.</p>
+<p>As always, topic suggestions are welcome via comments on any post.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.apnorton.com/blog/blog/2014/05/23/Hello-World/" data-id="ciwwwnydm000n9igc9qbjrk96" class="article-share-link">Share</a>
+      
+        <a href="http://www.apnorton.com/blog/blog/2014/05/23/Hello-World/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/meta/">meta</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/blog/">&laquo; Prev</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/">Visualizing Multidimensional Data in Python</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/11/09/Election-2016/">Election 2016: Moving Forward</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/10/28/Commenting/">New Feature: Commenting!</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/09/30/A-Summer-with-Microsoft/">A Microsoft Summer, Part 1: Seattle Fun</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/08/07/Ada-s-Technical-Books/">Ada&#39;s Technical Books</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/book-reviews/">book-reviews</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/">computer-science</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/algorithms/">algorithms</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/contests/">contests</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/programming-languages/">programming-languages</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/tools/">tools</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/fun/">fun</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/fun/seattle/">seattle</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/">math</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/computational-geometry/">computational-geometry</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/number-theory/">number-theory</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/meta/">meta</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/opinion/">opinion</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/algorithms/" style="font-size: 15px;">algorithms</a> <a href="/blog/tags/books/" style="font-size: 12.5px;">books</a> <a href="/blog/tags/computer-science/" style="font-size: 17.5px;">computer-science</a> <a href="/blog/tags/contests/" style="font-size: 10px;">contests</a> <a href="/blog/tags/data/" style="font-size: 10px;">data</a> <a href="/blog/tags/functional-programming/" style="font-size: 10px;">functional-programming</a> <a href="/blog/tags/general-computing/" style="font-size: 10px;">general-computing</a> <a href="/blog/tags/internship/" style="font-size: 12.5px;">internship</a> <a href="/blog/tags/life/" style="font-size: 12.5px;">life</a> <a href="/blog/tags/math/" style="font-size: 20px;">math</a> <a href="/blog/tags/meta/" style="font-size: 12.5px;">meta</a> <a href="/blog/tags/number-theory/" style="font-size: 10px;">number-theory</a> <a href="/blog/tags/opinion/" style="font-size: 10px;">opinion</a> <a href="/blog/tags/project-euler/" style="font-size: 10px;">project-euler</a> <a href="/blog/tags/websites/" style="font-size: 10px;">websites</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/07/">July 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/05/">May 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Andrew Norton<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Blog</a>
+  
+    <a href="http://www.apnorton.com/" class="mobile-nav-link">Web Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'apnorton';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+  </div>
+
+<!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+</body>
+</html>

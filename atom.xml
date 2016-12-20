@@ -82,6 +82,161 @@
   </entry>
   
   <entry>
+    <title>Election 2016: Moving Forward</title>
+    <link href="http://www.apnorton.com/blog/2016/11/09/Election-2016/"/>
+    <id>http://www.apnorton.com/blog/2016/11/09/Election-2016/</id>
+    <published>2016-11-09T08:15:08.000Z</published>
+    <updated>2016-11-16T04:06:10.061Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;em&gt;(Warning: political post ahead)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Like many of my fellow Americans, I stayed up late tonight to watch the polling results for the 2016 General Election.  As of my writing this, it appears that Donald Trump will win by a slight margin.  The New York Times is predicting that the popular vote will go to Hillary Clinton, while Politico and the Wall Street Journal are showing the &lt;em&gt;current&lt;/em&gt; popular vote is Trump’s by about 1 million.&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;Also like most of my fellow Americans, I turned to social media (in my case, these are Facebook, Twitter, and Reddit) to find how my friends are taking the results.  About half of my friends are exulting in the victory of their candidate, while about half of my friends are dismayed at what they see to be the impending doom of the next four years.  As someone who hated both candidates with a vengeance, I’m watching the fireworks from a somewhat distant perspective.  While I’m glad Clinton isn’t president, I’m not thrilled with the prospects of a Trump presidency.  (Had this election gone the other way, the prior sentence would have simply switched the placement of names.)&lt;/p&gt;
+&lt;p&gt;What is most interesting to me is the repetitive nature of elections–I suppose I was too young to notice it before, but being cognizant of four elections in my lifetime has lead me to believe a two key things are invariant.  (I recognize I am quite young to be making such bold claims; it will be interesting to look back on this post in a few decades to see how my opinions have shifted.)  &lt;/p&gt;
+&lt;p&gt;Firstly, every election is “too important” to vote for a third party.  The nature of a two-party system lends itself towards the selection of candidates with increasingly extreme views; waiting “until it’s safe” to vote for a third party means you will never vote for that third party.  This was an interesting year for the Libertarian party; while they didn’t reach their “5% popular vote” goal to gain federal funding, they certainly made strides in becoming a more socially acceptable choice for voters.&lt;/p&gt;
+&lt;p&gt;Secondly, whoever loses an election believes that the country is doomed.  A lot of my fundamentalist friends were convinced that Obama beating McCain in the 2008 election would result in the death of religious freedom.  When he was re-elected in 2012, the number of people on my Facebook feed talking about leaving the country and the perils of the future was stunning.  There was talk of trying to get Texas to secede.  Also, they blamed the third party for stealing needed votes from Romney.   However, after this election, I am seeing my more liberal friends posting their fears that the United States will cease to exist as we know it.  Paul Krugman, a Nobel Prize-winning economist-turned political commentator, &lt;a href=&quot;http://www.nytimes.com/interactive/projects/cp/opinion/election-night-2016/the-unknown-country&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wrote&lt;/a&gt; in an op-ed for the New York Times: “I don’t know how we go forward from here.  Is America a failed state and society? It looks truly possible.” Twitter was rife with comparisons to Brexit.  I saw a friend of mine post about recommending California secede from the Union, and I’ve seen multiple posts about how the popular vote should correspond to the electoral college.  To add to the confusion, I’ve even seen some friends blame the Libertarian party for stealing votes from Clinton.  I can’t help but notice the parallels between Republicans who lost in 2012 and 2008.&lt;/p&gt;
+&lt;p&gt;Whether you are a Republican, Democrat, or third-party member, please remember that &lt;em&gt;this too shall pass&lt;/em&gt;.  Excessive revelry in victory doesn’t serve a positive purpose and neither does assuming the worst about the next four years.  Don’t give up–whether you view this as a great leap forward or a frightening setback, there is much to be done to improve our country and we each have a role to play.  Let’s seek to understand and respect each other as we attempt to rebuild trust and cooperation after a very divisive race.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;(Warning: political post ahead)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Like many of my fellow Americans, I stayed up late tonight to watch the polling results for the 2016 General Election.  As of my writing this, it appears that Donald Trump will win by a slight margin.  The New York Times is predicting that the popular vote will go to Hillary Clinton, while Politico and the Wall Street Journal are showing the &lt;em&gt;current&lt;/em&gt; popular vote is Trump’s by about 1 million.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="opinion" scheme="http://www.apnorton.com/blog/categories/opinion/"/>
+    
+    
+      <category term="life" scheme="http://www.apnorton.com/blog/tags/life/"/>
+    
+      <category term="opinion" scheme="http://www.apnorton.com/blog/tags/opinion/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>New Feature: Commenting!</title>
+    <link href="http://www.apnorton.com/blog/2016/10/28/Commenting/"/>
+    <id>http://www.apnorton.com/blog/2016/10/28/Commenting/</id>
+    <published>2016-10-28T04:32:31.000Z</published>
+    <updated>2016-11-16T04:06:10.061Z</updated>
+    
+    <content type="html">&lt;p&gt;Thanks to a &lt;a href=&quot;http://www.codeblocq.com/2015/12/Add-Disqus-comments-in-Hexo/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;helpful blog post&lt;/a&gt; by CodeBlocQ, I’ve now enabled Disqus-powered comments on the blog!  Let me know what you think about my posts, and I’ll keep an eye on discussions to respond to questions/comments/concerns!&lt;/p&gt;
+&lt;p&gt;The second part of the Microsoft series should be out soon; I wanted to get comments working before I did so, but it took me a while to find the time to actually get it up and running.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Thanks to a &lt;a href=&quot;http://www.codeblocq.com/2015/12/Add-Disqus-comments-in-Hexo/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;helpful blog post&lt;/a&gt; 
+    
+    </summary>
+    
+      <category term="meta" scheme="http://www.apnorton.com/blog/categories/meta/"/>
+    
+    
+      <category term="meta" scheme="http://www.apnorton.com/blog/tags/meta/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>A Microsoft Summer, Part 1: Seattle Fun</title>
+    <link href="http://www.apnorton.com/blog/2016/09/30/A-Summer-with-Microsoft/"/>
+    <id>http://www.apnorton.com/blog/2016/09/30/A-Summer-with-Microsoft/</id>
+    <published>2016-09-30T05:26:20.000Z</published>
+    <updated>2016-11-16T04:06:09.994Z</updated>
+    
+    <content type="html">&lt;p&gt;As suggested by this post’s title, I spent this past summer as an intern with Microsoft in Redmond, Washington.  The experience was highly educational for me–as my first (and last!) “real” internship, I learned a lot about software development and the importance of corporate culture, as well as discovering a lot about myself.  Overall, the experience was a positive one, though, and I had an enormous amount of fun!  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This is the first of a three-part series on my time at Microsoft.  This post focuses on fun recreational activities for interns in the Seattle area.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Outdoors&quot;&gt;&lt;a href=&quot;#Outdoors&quot; class=&quot;headerlink&quot; title=&quot;Outdoors&quot;&gt;&lt;/a&gt;Outdoors&lt;/h2&gt;&lt;img src=&quot;/blog/2016/09/30/A-Summer-with-Microsoft/north_cascades.jpg&quot; alt=&quot;Hiking in the North Cascades&quot; title=&quot;Hiking in the North Cascades&quot;&gt;
+&lt;p&gt;The Pacific Northwest is home to some of the most amazing views I’ve ever seen.  Seattle is conveniently located close to the beach, the mountains, Puget Sound, rainforests, and many hiking trails and campsites.  Exploring the outdoors also has the advantage of being very inexpensive, which is great if you’re saving your internship money for college expenses.  If you visit National Parks, consider the &lt;a href=&quot;https://www.nps.gov/elca/planyourvisit/passport-program.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;National Park Passport Program&lt;/a&gt;–if you’re going to once-in-a-lifetime parks, it’s a good idea to get your passbook stamped!&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;strong&gt;Olympic National Park&lt;/strong&gt; &lt;em&gt;(1+ days, $5 parking permit)&lt;/em&gt;: Olympic is a &lt;em&gt;gigantic&lt;/em&gt; national park just a few hours away from Seattle.  It has beaches, mountains, and rainforests–whatever you enjoy seeing in nature, you’ll probably find it here.  The Microsoft Internz mailing list organizes some hikes in this park.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;North Cascades National Park&lt;/strong&gt; &lt;em&gt;(1+ days, $5 parking permit)&lt;/em&gt;: Less-frequented and a bit further away than Olympic, the North Cascades is a bit less developed/road-accessible, but totally worth it.  I hiked the Maple Loop Trail one afternoon–it’s around 8 miles with ~2000ft of elevation gain–the view was amazing.  If you’re looking for a good trail to do in around 5 hours, I recommend that one.  There’s no cell reception anywhere in the park, so be sure to bring an actual map or print directions.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Kayaking the sound&lt;/strong&gt; &lt;em&gt;(2-3 hours, $18/hour)&lt;/em&gt;: Kayaking in the sound is an awesome way to spend a few hours on an afternoon.  Be sure to wear sunscreen!  &lt;a href=&quot;http://aguaverde.com/paddleclub/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Agua Verde&lt;/a&gt; is a popular place to rent kayaks.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Camping&lt;/strong&gt; &lt;em&gt;(2+ days)&lt;/em&gt;: I didn’t bring my camping gear, but I sure wish I did!  Camping in national or state parks (especially the Cascades or Olympic) would be amazing.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Climbing&lt;/strong&gt; &lt;em&gt;(~\$60/mo or ~\$20/day)&lt;/em&gt;: Seattle is home to some awesome climbing gyms!  &lt;a href=&quot;https://www.stonegardens.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Stone Gardens&lt;/a&gt; has locations in both Seattle and Redmond, and it had roped climbing and bouldering, so I joined that gym. A Stone Gardens membership costs around $60/month (bring your student ID!), but you can go for free on your first visit if a member brings you–reach out on Facebook or Slack for other interns to invite you.  Going on outdoors climbs and/or mountaineering events was something some of my friends did, which they seemed to really enjoy.&lt;/p&gt;
+&lt;h2 id=&quot;Museums-Landmarks-etc&quot;&gt;&lt;a href=&quot;#Museums-Landmarks-etc&quot; class=&quot;headerlink&quot; title=&quot;Museums, Landmarks, etc&quot;&gt;&lt;/a&gt;Museums, Landmarks, etc&lt;/h2&gt;&lt;img src=&quot;/blog/2016/09/30/A-Summer-with-Microsoft/museum_of_flight.jpg&quot; alt=&quot;Boeing Museum of Flight&quot; title=&quot;Boeing Museum of Flight&quot;&gt;
+&lt;p&gt;There’s a lot to do in Seattle, and one of your best tools for experiencing as much as you can while still being under budget is the Microsoft Prime Card.  With discounts on everything from haircuts and food to zoos and museums, it’s a really awesome perk for interns who want to see everything.  I’ve listed the Prime Card cost and the “normal” cost for as many of the activities below as I could find.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Boeing Museum of Flight&lt;/strong&gt; &lt;em&gt;(3hrs, $5 with Prime Card, &lt;a href=&quot;http://www.museumofflight.org/Plan-Your-Visit/Hours-and-Admission&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;$21 without&lt;/a&gt;)&lt;/em&gt;: The Museum of Flight is simply amazing.  I’ve been to the Smithsonian Air and Space Museum in DC, the Udvar-Hazy Center in Dulles, and the National Museum of the USAF, but and this is certainly in their tier.  In fact, I’d contend some of the exhibit design far exceeds that of the Smithsonian, even though the collection seems to be smaller.  Some of my favorite parts were the one-of-a-kind M-21 Blackbird (instead of the more common SR 71), being able to walk through a Concorde jet, and seeing my third B-29 Superfortress.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ada’s Technical Books&lt;/strong&gt; &lt;em&gt;(1-2hrs, prices reasonable)&lt;/em&gt;: This is the dream bookstore for any techie.  I’ve &lt;a href=&quot;http://www.apnorton.com/blog/2016/08/07/Ada-s-Technical-Books/&quot;&gt;already written&lt;/a&gt; about it, so I’m not going to duplicate my summary here.  Suffice it to say that you can find books here on nearly any technical subject you’d ever be interested.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Woodland Park Zoo&lt;/strong&gt; &lt;em&gt;(3-4hrs, \$8.50 with Prime Card, \$19.95 without)&lt;/em&gt;: This zoo is well designed, and balances providing quality animal habitats while allowing guests to quickly move through exhibits and see many animals.  It’s certainly worth a weekend afternoon for a visit; I only wish the Komodo Dragon exhibit had been operational when I went.  My favorite section was the Northern Trail–they have really nice bear and wolf exhibits.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Seattle Aquarium&lt;/strong&gt; &lt;em&gt;(2hrs, \$10.25 with Prime Card, \$24.95 without):&lt;/em&gt; The aquarium is really nice, but I’m afraid I was spoiled by growing up next to the National Aquarium in Baltimore.  For the $10.25 it costs with the Microsoft Prime Card, I’d certainly recommend going (it’s also right next to the Ferris Wheel and the National Historic Site Klondike Museum, so perhaps it could be part of a larger trip downtown), though. The octopus exhibit is really cool, and they do public feedings, so try to be there when one is scheduled.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Space Needle&lt;/strong&gt; &lt;em&gt;(2hrs, \$17 with Prime Card, \$22 without):&lt;/em&gt; Ok, sure, the Space Needle is expensive and really touristy, but you &lt;em&gt;must&lt;/em&gt; go up to the top if you haven’t already.  The view is spectacular, and there’s so much history tied up in this building about the World’s Fair (there are really nice exhibits on your way up).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EMP Museum&lt;/strong&gt; &lt;em&gt;(2-3hrs, $8 with Prime Card):&lt;/em&gt; While “EMP” stands for the “Experience Music Project,” there is a lot more here than just music.  Ever wonder where many of the costumes for &lt;em&gt;The Wizard of Oz&lt;/em&gt; ended up?   What about the costumes from &lt;em&gt;The Princess Bride&lt;/em&gt; or Susan’s horn from &lt;em&gt;The Lion, The Witch, and the Wardrobe&lt;/em&gt;?  Yep, they’re all here.  They even have a sci-fi exhibit with props from Doctor Who, Star Trek, 2001, and many other famous movies and TV series.  I highly recommend going.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Chihuly Glass Museum&lt;/strong&gt; &lt;em&gt;(1hr, \$17 with Prime Card, \$22 without):&lt;/em&gt; If you’re into glass art, this is a nice place.  Chihuly really has a talent for making spectacular works from simple materials, and it’s all lit up in an amazing way.  This, the EMP Museum, and the Space Needle are all within walking distance from each other, so the trio could make for a full day of fun.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pike Place Market &amp;amp; Starbucks&lt;/strong&gt; &lt;em&gt;(1-2hrs):&lt;/em&gt; The Pike Place Market is a pretty famous part of Seattle for many reasons, not the least of which being that the first Starbucks is here.  You &lt;em&gt;must&lt;/em&gt; eat the Salmon or Halibut sandwich at the Market Grill. It would be worth a trip from Redmond to Seattle in rush hour just to eat this delicious meal.&lt;/p&gt;
+&lt;h2 id=&quot;Microsoft-Related&quot;&gt;&lt;a href=&quot;#Microsoft-Related&quot; class=&quot;headerlink&quot; title=&quot;Microsoft-Related&quot;&gt;&lt;/a&gt;Microsoft-Related&lt;/h2&gt;&lt;img src=&quot;/blog/2016/09/30/A-Summer-with-Microsoft/intern_signature_event.jpg&quot; alt=&quot;Ellie Goulding in Concert&lt;br /&gt;at the Microsoft Intern Signature Event&quot; title=&quot;Ellie Goulding in Concert&lt;br /&gt;at the Microsoft Intern Signature Event&quot;&gt;
+&lt;p&gt;Microsoft itself hosts some pretty awesome events for interns.  I didn’t do as many as were offered (and some of the ones I missed sounded pretty cool, like NERF Battles and Amazon vs. Microsoft Paintball), but I’ve listed below ones I participated in and enjoyed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Microsoft Intern Puzzle Day&lt;/strong&gt;: Consistently reported by interns who participated as one of the best parts of the internship.  If you’re interested in puzzles, codes, and problem-solving (and, let’s face it–if you’re in CS, the answer is probably “yes”), this is the event for you!  Also, you can get a free t-shirt.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hunger Games&lt;/strong&gt;: What could be more fun than running around Microsoft campus in the dark with NERF guns?  Not much! This event is a great way to meet new friends and unwind after a hard day’s work.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Assassin&lt;/strong&gt;: Can you track down and tag your target before your deadline expires?  This is the ultimate in workplace sneakery as, for approximately 3 weeks, interns will be hunting each other down and tagging each other with namebadges.  Kill or be killed–it’s a lot of fun either way. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Internz Hikes&lt;/strong&gt;: Sign up for the Internz mailing list, and go on at least one hike.  These range from simple hikes that anyone could do to 14 milers that might benefit from some preparation.  Like I’ve mentioned before, there’s a lot of great hiking in the area–don’t finish out the summer without at least trying one hike.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Intern Signature Event&lt;/strong&gt;: This is the best event for interns that Microsoft hosts, hands down.  They typically rent out a large venue (past events have been held at the Boeing factory, Gasworks, and–most recently–the Space Needle and surrounding areas), host a private concert (e.g. Maroon 5, Ellie Goulding, etc), and give away a really nice gift to all their interns (this past year, we all got Surface Books).  Definitely go–it’s a blast and you’ll have a lot of fun.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;As suggested by this post’s title, I spent this past summer as an intern with Microsoft in Redmond, Washington.  The experience was highly educational for me–as my first (and last!) “real” internship, I learned a lot about software development and the importance of corporate culture, as well as discovering a lot about myself.  Overall, the experience was a positive one, though, and I had an enormous amount of fun!  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This is the first of a three-part series on my time at Microsoft.  This post focuses on fun recreational activities for interns in the Seattle area.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Outdoors&quot;&gt;&lt;a href=&quot;#Outdoors&quot; class=&quot;headerlink&quot; title=&quot;Outdoors&quot;&gt;&lt;/a&gt;Outdoors&lt;/h2&gt;&lt;img src=&quot;/blog/2016/09/30/A-Summer-with-Microsoft/north_cascades.jpg&quot; alt=&quot;Hiking in the North Cascades&quot; title=&quot;Hiking in the North Cascades&quot;&gt;
+&lt;p&gt;The Pacific Northwest is home to some of the most amazing views I’ve ever seen.  Seattle is conveniently located close to the beach, the mountains, Puget Sound, rainforests, and many hiking trails and campsites.  Exploring the outdoors also has the advantage of being very inexpensive, which is great if you’re saving your internship money for college expenses.  If you visit National Parks, consider the &lt;a href=&quot;https://www.nps.gov/elca/planyourvisit/passport-program.htm&quot;&gt;National Park Passport Program&lt;/a&gt;–if you’re going to once-in-a-lifetime parks, it’s a good idea to get your passbook stamped!&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="fun" scheme="http://www.apnorton.com/blog/categories/fun/"/>
+    
+      <category term="seattle" scheme="http://www.apnorton.com/blog/categories/fun/seattle/"/>
+    
+    
+      <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
+    
+      <category term="internship" scheme="http://www.apnorton.com/blog/tags/internship/"/>
+    
+      <category term="life" scheme="http://www.apnorton.com/blog/tags/life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ada&#39;s Technical Books</title>
+    <link href="http://www.apnorton.com/blog/2016/08/07/Ada-s-Technical-Books/"/>
+    <id>http://www.apnorton.com/blog/2016/08/07/Ada-s-Technical-Books/</id>
+    <published>2016-08-07T05:01:24.000Z</published>
+    <updated>2016-11-16T04:06:10.097Z</updated>
+    
+    <content type="html">&lt;p&gt;This summer, I’ve been working as an intern for Microsoft on the Direct2D/DirectWrite team.  While I can’t really talk about what my work entails, I &lt;em&gt;can&lt;/em&gt; talk about some of the fun things I’ve done this summer in my free time and the non-work-related components of my internship.  I suppose most people wouldn’t start blogging about their internship by describing a bookstore, but I went to this place today and it was so incredible that I had to write about it.&lt;/p&gt;
+&lt;p&gt;In Capitol Hill, there’s a small store by the name &lt;a href=&quot;http://www.seattletechnicalbooks.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;em&gt;Ada’s Technical Books&lt;/em&gt;&lt;/a&gt;. It’s in a house that’s been converted to a cafe and bookstore, and is quite possibly the most amazing bookstore I’ve ever seen.  As you walk in, you’re greeted by an small cafe counter to your left and an open area to your right with short bookcases and comfy chairs.  Toys, puzzles, and “Maker”-appropriate items like lockpicks and Raspberry Pis.  &lt;/p&gt;
+&lt;img src=&quot;/blog/2016/08/07/Ada-s-Technical-Books/widgets.jpg&quot; alt=&quot;Who can resist a giant 555 timer?&quot; title=&quot;Who can resist a giant 555 timer?&quot;&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;As I explored the shelves, I found dozens of copies of Petzold’s &lt;em&gt;CODE&lt;/em&gt;, a strong science fiction section with nods to &lt;em&gt;The Princess Bride&lt;/em&gt; and &lt;em&gt;The Lord of the Rings&lt;/em&gt;, myriad &lt;strong&gt;Make:&lt;/strong&gt; books, &lt;a href=&quot;http://www.sparkfun.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sparkfun&lt;/a&gt; kits, and many books I’ve only seen online catalogs.  Looking for a copy of &lt;a href=&quot;https://mitpress.mit.edu/books/introduction-algorithms&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CLRS&lt;/a&gt;? It’s there, along with many other famous textbooks.  &lt;a href=&quot;http://codebabies.com/product/html-for-babies&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;em&gt;HTML for Babies&lt;/em&gt;&lt;/a&gt;? It’s in the kids section alongside books for helping your child learn to program and &lt;a href=&quot;http://www.snapcircuits.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Snap Circuits&lt;/a&gt; kits for teaching electronics.  Math books ranging from basic statistics and calculus all the way through advanced algebra and cryptanalysis are available, as are language-specific programming texts for just about almost every language I’ve heard of.&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/08/07/Ada-s-Technical-Books/reading_room.jpg&quot; alt=&quot;Wall-to-wall bookcases in the back reading room&quot; title=&quot;Wall-to-wall bookcases in the back reading room&quot;&gt;
+&lt;p&gt;The back of the building has a “reading room” area with a chalkboard, large table, and a bar-like area for reading or coding.  On the 3 sides of the room not covered by the chalkboard, there are wall-to-wall bookcases containing books on dozens of languages and technologies.  &lt;/p&gt;
+&lt;p&gt;If you’re in the Seattle area, especially if you’re interning or going to school in the area, I &lt;em&gt;highly&lt;/em&gt; recommend visiting this store.  Even if you don’t plan on purchasing anything, it’s a great opportunity to read a few pages of a book you might not be convinced is worth adding to you personal collection, but can’t read enough of a preview online to make that determination.  The fact that this store has sufficient customers to survive is a strong indicator of the impact Microsoft, Amazon, and Google have on the community–I wish there was a store like this where I live! &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This summer, I’ve been working as an intern for Microsoft on the Direct2D/DirectWrite team.  While I can’t really talk about what my work entails, I &lt;em&gt;can&lt;/em&gt; talk about some of the fun things I’ve done this summer in my free time and the non-work-related components of my internship.  I suppose most people wouldn’t start blogging about their internship by describing a bookstore, but I went to this place today and it was so incredible that I had to write about it.&lt;/p&gt;
+&lt;p&gt;In Capitol Hill, there’s a small store by the name &lt;a href=&quot;http://www.seattletechnicalbooks.com/&quot;&gt;&lt;em&gt;Ada’s Technical Books&lt;/em&gt;&lt;/a&gt;. It’s in a house that’s been converted to a cafe and bookstore, and is quite possibly the most amazing bookstore I’ve ever seen.  As you walk in, you’re greeted by an small cafe counter to your left and an open area to your right with short bookcases and comfy chairs.  Toys, puzzles, and “Maker”-appropriate items like lockpicks and Raspberry Pis.  &lt;/p&gt;
+&lt;img src=&quot;/blog/2016/08/07/Ada-s-Technical-Books/widgets.jpg&quot; alt=&quot;Who can resist a giant 555 timer?&quot; title=&quot;Who can resist a giant 555 timer?&quot;&gt;
+    
+    </summary>
+    
+      <category term="fun" scheme="http://www.apnorton.com/blog/categories/fun/"/>
+    
+      <category term="seattle" scheme="http://www.apnorton.com/blog/categories/fun/seattle/"/>
+    
+    
+      <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
+    
+      <category term="internship" scheme="http://www.apnorton.com/blog/tags/internship/"/>
+    
+      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
+    
+      <category term="books" scheme="http://www.apnorton.com/blog/tags/books/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Visualizing Graphs in Program Output</title>
     <link href="http://www.apnorton.com/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/"/>
     <id>http://www.apnorton.com/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/</id>
@@ -125,9 +280,9 @@
       <category term="tools" scheme="http://www.apnorton.com/blog/categories/computer-science/tools/"/>
     
     
-      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
-    
       <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
+    
+      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
     
   </entry>
   
@@ -250,9 +405,9 @@ D_n &amp;amp;= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
       <category term="book-reviews" scheme="http://www.apnorton.com/blog/categories/book-reviews/"/>
     
     
-      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
-    
       <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
+    
+      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
     
       <category term="general-computing" scheme="http://www.apnorton.com/blog/tags/general-computing/"/>
     
