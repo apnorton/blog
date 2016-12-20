@@ -16,7 +16,7 @@
 <meta property="og:image" content="http://www.apnorton.com/blog/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/output_18_0.png">
 <meta property="og:image" content="http://www.apnorton.com/blog/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/output_21_0.png">
 <meta property="og:image" content="http://www.apnorton.com/blog/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/output_23_0.png">
-<meta property="og:updated_time" content="2016-12-20T01:51:55.737Z">
+<meta property="og:updated_time" content="2016-12-20T01:58:59.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Visualizing Multidimensional Data in Python">
 <meta name="twitter:description" content="Nearly everyone is familiar with two-dimensional plots, and most college students in the hard sciences are familiar with three dimensional plots.  However, modern datasets are rarely two- or three-dim">
@@ -108,7 +108,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Nearly everyone is familiar with two-dimensional plots, and most college students in the hard sciences are familiar with three dimensional plots.  However, modern datasets are rarely two- or three-dimensional.  In machine learning, it is commonplace to have dozens if not hundreds of dimensions, and even human-generated datasets can have a dozen or so dimensions.  At the same time, visualization is an important first step in working with data.  In this blog entry, I’ll explore how we can use Python to work with n-dimensional data, where $n\geq 3$. </p>
+        <p>Nearly everyone is familiar with two-dimensional plots, and most college students in the hard sciences are familiar with three dimensional plots.  However, modern datasets are rarely two- or three-dimensional.  In machine learning, it is commonplace to have dozens if not hundreds of dimensions, and even human-generated datasets can have a dozen or so dimensions.  At the same time, visualization is an important first step in working with data.  In this blog entry, I’ll explore how we can use Python to work with n-dimensional data, where $n\geq 4$. </p>
 <h2 id="Packages"><a href="#Packages" class="headerlink" title="Packages"></a>Packages</h2><p>I’m going to assume we have the <code>numpy</code>, <code>pandas</code>, <code>matplotlib</code>, and <code>sklearn</code> packages installed for Python.  In particular, the components I will use are as below:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA <span class="keyword">as</span> sklearnPCA</span><br><span class="line"><span class="keyword">from</span> sklearn.discriminant_analysis <span class="keyword">import</span> LinearDiscriminantAnalysis <span class="keyword">as</span> LDA</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets.samples_generator <span class="keyword">import</span> make_blobs</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pandas.tools.plotting <span class="keyword">import</span> parallel_coordinates</span><br></pre></td></tr></table></figure>
 <h2 id="Plotting-2D-Data"><a href="#Plotting-2D-Data" class="headerlink" title="Plotting 2D Data"></a>Plotting 2D Data</h2><p>Before dealing with multidimensional data, let’s see how a scatter plot works with two-dimensional data in Python.  </p>
@@ -145,7 +145,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/" data-id="ciwwuvgdi000j6zgc58dh7hvn" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/" data-id="ciwwuugkl00290pgcpnj9t9th" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/computer-science/">computer-science</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/data/">data</a></li></ul>

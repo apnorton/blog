@@ -103,7 +103,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Nearly everyone is familiar with two-dimensional plots, and most college students in the hard sciences are familiar with three dimensional plots.  However, modern datasets are rarely two- or three-dimensional.  In machine learning, it is commonplace to have dozens if not hundreds of dimensions, and even human-generated datasets can have a dozen or so dimensions.  At the same time, visualization is an important first step in working with data.  In this blog entry, I’ll explore how we can use Python to work with n-dimensional data, where $n\geq 3$. </p>
+        <p>Nearly everyone is familiar with two-dimensional plots, and most college students in the hard sciences are familiar with three dimensional plots.  However, modern datasets are rarely two- or three-dimensional.  In machine learning, it is commonplace to have dozens if not hundreds of dimensions, and even human-generated datasets can have a dozen or so dimensions.  At the same time, visualization is an important first step in working with data.  In this blog entry, I’ll explore how we can use Python to work with n-dimensional data, where $n\geq 4$. </p>
 <h2 id="Packages"><a href="#Packages" class="headerlink" title="Packages"></a>Packages</h2><p>I’m going to assume we have the <code>numpy</code>, <code>pandas</code>, <code>matplotlib</code>, and <code>sklearn</code> packages installed for Python.  In particular, the components I will use are as below:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA <span class="keyword">as</span> sklearnPCA</span><br><span class="line"><span class="keyword">from</span> sklearn.discriminant_analysis <span class="keyword">import</span> LinearDiscriminantAnalysis <span class="keyword">as</span> LDA</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets.samples_generator <span class="keyword">import</span> make_blobs</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pandas.tools.plotting <span class="keyword">import</span> parallel_coordinates</span><br></pre></td></tr></table></figure>
 <h2 id="Plotting-2D-Data"><a href="#Plotting-2D-Data" class="headerlink" title="Plotting 2D Data"></a>Plotting 2D Data</h2><p>Before dealing with multidimensional data, let’s see how a scatter plot works with two-dimensional data in Python.  </p>
@@ -140,7 +140,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/" data-id="ciwwuvgdi000j6zgc58dh7hvn" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/" data-id="ciwwuugkl00290pgcpnj9t9th" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/computer-science/">computer-science</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/data/">data</a></li></ul>
@@ -194,7 +194,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/" data-id="ciwwuvgdg000i6zgckem66mox" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/" data-id="ciwwufnis00190pgcpybsqihy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/computer-science/">computer-science</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/math/">math</a></li></ul>
@@ -257,7 +257,7 @@ D_n &amp;= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2015/10/15/Deranged-Exams-An-ICPC-Problem/" data-id="ciwwuvgcv00056zgc6aeeqd2p" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2015/10/15/Deranged-Exams-An-ICPC-Problem/" data-id="ciwwufni8000s0pgc99u4jzha" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/contests/">contests</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/math/">math</a></li></ul>
@@ -311,7 +311,7 @@ D_n &amp;= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2015/06/09/Eight-Books-on-Math-and-Computer-Science/" data-id="ciwwuvgcx00076zgce4jmztgw" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2015/06/09/Eight-Books-on-Math-and-Computer-Science/" data-id="ciwwufnhw000q0pgc0l459o8k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/books/">books</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/computer-science/">computer-science</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/general-computing/">general-computing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/math/">math</a></li></ul>
@@ -357,7 +357,7 @@ D_n &amp;= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2014/07/14/How-to-Learn-Haskell/" data-id="ciwwuvgdb000f6zgc05vddead" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2014/07/14/How-to-Learn-Haskell/" data-id="ciwwufnio00150pgcpoe95jqh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/functional-programming/">functional-programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/websites/">websites</a></li></ul>
@@ -412,7 +412,7 @@ D_n &amp;= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2014/07/14/Factorization-and-Divisor-Count/" data-id="ciwwuvgd000096zgcozqsadmd" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2014/07/14/Factorization-and-Divisor-Count/" data-id="ciwwufnia000w0pgcrczwr0ir" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/math/">math</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/number-theory/">number-theory</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/project-euler/">project-euler</a></li></ul>
@@ -467,7 +467,7 @@ D_n &amp;= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2014/06/09/Big-O-notation-An-Introduction-to-Asymptotics-of-Loops/" data-id="ciwwuvgct00046zgc5bd1yapd" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2014/06/09/Big-O-notation-An-Introduction-to-Asymptotics-of-Loops/" data-id="ciwwufnhv000p0pgcqz2g260n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/math/">math</a></li></ul>
@@ -511,7 +511,7 @@ D_n &amp;= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2014/06/05/Greens-Theorem-and-The-Area-of-Polygons/" data-id="ciwwuvgd1000a6zgcja25btq8" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2014/06/05/Greens-Theorem-and-The-Area-of-Polygons/" data-id="ciwwufnie000y0pgc8ore20wr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/math/">math</a></li></ul>
@@ -553,7 +553,7 @@ D_n &amp;= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2014/05/23/Hello-World/" data-id="ciwwuvgd9000d6zgc2gaa3pmo" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2014/05/23/Hello-World/" data-id="ciwwufnij00120pgc57etdm31" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/meta/">meta</a></li></ul>
