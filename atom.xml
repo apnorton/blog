@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://www.apnorton.com/blog/"/>
-  <updated>2017-01-04T20:32:45.831Z</updated>
+  <updated>2017-01-04T20:34:28.087Z</updated>
   <id>http://www.apnorton.com/blog/</id>
   
   <author>
@@ -16,16 +16,16 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Machine Learning with the Surface Book</title>
+    <title>TensorFlow with the Surface Book</title>
     <link href="http://www.apnorton.com/blog/2017/01/04/Machine-Learning-with-the-Surface-Book/"/>
     <id>http://www.apnorton.com/blog/2017/01/04/Machine-Learning-with-the-Surface-Book/</id>
     <published>2017-01-04T20:32:45.000Z</published>
-    <updated>2017-01-04T20:32:45.831Z</updated>
+    <updated>2017-01-04T20:34:28.087Z</updated>
     
     <content type="html">&lt;p&gt;While interning at Microsoft over the summer, I received a first-generation Surface Book with an i5-6300U CPU (2.4 GHz dual core with up to 3.0 GHz), 8GB RAM, and a “GeForce GPU” (officially unnamed, but believed to be equivalent to a GT 940).  This is a huge step up from my older laptop, so I wanted to set it up for my ML work.  In this post, I’ll outline how I set it up with TensorFlow and GPU acceleration.&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;CUDA-cuDNN&quot;&gt;&lt;a href=&quot;#CUDA-cuDNN&quot; class=&quot;headerlink&quot; title=&quot;CUDA + cuDNN&quot;&gt;&lt;/a&gt;CUDA + cuDNN&lt;/h2&gt;&lt;p&gt;If you want to use GPU acceleration, the typical way to do so is with NVIDIA’s CUDA API.  CUDA 8.0 is compatible with the Surface Book and is (as of this writing) the most up-to-date version of CUDA.  Download it &lt;a href=&quot;https://developer.nvidia.com/cuda-downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;from the NVIDIA website&lt;/a&gt; and run their installer.&lt;/p&gt;
 &lt;p&gt;For work with deep learning, you’ll also want to install cuDNN.  To install, just &lt;a href=&quot;https://developer.nvidia.com/cudnn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;download&lt;/a&gt; the library from NVIDIA’s website and unzip it in a convenient place (I chose &lt;code&gt;C:\cudnn&lt;/code&gt;).  The only “installation” you need to do is to add &lt;code&gt;C:\cudnn\bin&lt;/code&gt; to your &lt;code&gt;PATH&lt;/code&gt; environment variable.&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;Python&quot;&gt;&lt;a href=&quot;#Python&quot; class=&quot;headerlink&quot; title=&quot;Python&quot;&gt;&lt;/a&gt;Python&lt;/h2&gt;&lt;p&gt;GPU acceleration is where you’re going to get the best performance improvements when running TensorFlow.  However, we might as well set up Python in a way that will run as fast as we can.  &lt;/p&gt;
 &lt;p&gt;I installed the &lt;a href=&quot;https://software.intel.com/intel-distribution-for-python&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;em&gt;Intel Distribution for Python&lt;/em&gt;&lt;/a&gt;.  This is a clone of Python 3.5, but compiled with optimizations for Intel CPUs and packaged with optimized versions of common libraries like &lt;code&gt;sklearn&lt;/code&gt;, &lt;code&gt;pandas&lt;/code&gt;, &lt;code&gt;numpy&lt;/code&gt;, and more.  It’s a free download from Intel, but it is officially still in Beta.  Thus far, I haven’t run into any problems using it with TensorFlow (but will update this post if I do).&lt;/p&gt;
 &lt;p&gt;To install Intel Python, just download and run the installer; I installed this to &lt;code&gt;C:\IntelPython35&lt;/code&gt;.  If you install it in this location, add &lt;code&gt;C:\IntelPython35\&lt;/code&gt; and &lt;code&gt;C:\IntelPython35\Scripts&lt;/code&gt; to your &lt;code&gt;PATH&lt;/code&gt; environment variable.  (Adding &lt;code&gt;\Scripts&lt;/code&gt; to your path allows you to use &lt;code&gt;pip&lt;/code&gt; or &lt;code&gt;jupyter&lt;/code&gt; directly from the commandline.)&lt;/p&gt;
@@ -49,6 +49,8 @@
     <summary type="html">
     
       &lt;p&gt;While interning at Microsoft over the summer, I received a first-generation Surface Book with an i5-6300U CPU (2.4 GHz dual core with up to 3.0 GHz), 8GB RAM, and a “GeForce GPU” (officially unnamed, but believed to be equivalent to a GT 940).  This is a huge step up from my older laptop, so I wanted to set it up for my ML work.  In this post, I’ll outline how I set it up with TensorFlow and GPU acceleration.&lt;/p&gt;
+&lt;h2 id=&quot;CUDA-cuDNN&quot;&gt;&lt;a href=&quot;#CUDA-cuDNN&quot; class=&quot;headerlink&quot; title=&quot;CUDA + cuDNN&quot;&gt;&lt;/a&gt;CUDA + cuDNN&lt;/h2&gt;&lt;p&gt;If you want to use GPU acceleration, the typical way to do so is with NVIDIA’s CUDA API.  CUDA 8.0 is compatible with the Surface Book and is (as of this writing) the most up-to-date version of CUDA.  Download it &lt;a href=&quot;https://developer.nvidia.com/cuda-downloads&quot;&gt;from the NVIDIA website&lt;/a&gt; and run their installer.&lt;/p&gt;
+&lt;p&gt;For work with deep learning, you’ll also want to install cuDNN.  To install, just &lt;a href=&quot;https://developer.nvidia.com/cudnn&quot;&gt;download&lt;/a&gt; the library from NVIDIA’s website and unzip it in a convenient place (I chose &lt;code&gt;C:\cudnn&lt;/code&gt;).  The only “installation” you need to do is to add &lt;code&gt;C:\cudnn\bin&lt;/code&gt; to your &lt;code&gt;PATH&lt;/code&gt; environment variable.&lt;/p&gt;
     
     </summary>
     
@@ -274,11 +276,11 @@
       <category term="seattle" scheme="http://www.apnorton.com/blog/categories/fun/seattle/"/>
     
     
-      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
-    
       <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
     
       <category term="internship" scheme="http://www.apnorton.com/blog/tags/internship/"/>
+    
+      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
     
       <category term="books" scheme="http://www.apnorton.com/blog/tags/books/"/>
     
@@ -328,9 +330,9 @@
       <category term="tools" scheme="http://www.apnorton.com/blog/categories/computer-science/tools/"/>
     
     
-      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
-    
       <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
+    
+      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
     
   </entry>
   
@@ -399,11 +401,11 @@ D_n &amp;amp;= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
       <category term="contests" scheme="http://www.apnorton.com/blog/categories/computer-science/contests/"/>
     
     
+      <category term="contests" scheme="http://www.apnorton.com/blog/tags/contests/"/>
+    
       <category term="algorithms" scheme="http://www.apnorton.com/blog/tags/algorithms/"/>
     
       <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
-    
-      <category term="contests" scheme="http://www.apnorton.com/blog/tags/contests/"/>
     
   </entry>
   
@@ -453,11 +455,11 @@ D_n &amp;amp;= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
       <category term="book-reviews" scheme="http://www.apnorton.com/blog/categories/book-reviews/"/>
     
     
-      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
-    
       <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
     
       <category term="general-computing" scheme="http://www.apnorton.com/blog/tags/general-computing/"/>
+    
+      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
     
       <category term="books" scheme="http://www.apnorton.com/blog/tags/books/"/>
     
