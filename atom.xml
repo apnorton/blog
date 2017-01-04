@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://www.apnorton.com/blog/"/>
-  <updated>2016-12-20T02:31:09.743Z</updated>
+  <updated>2017-01-04T20:32:45.831Z</updated>
   <id>http://www.apnorton.com/blog/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Machine Learning with the Surface Book</title>
+    <link href="http://www.apnorton.com/blog/2017/01/04/Machine-Learning-with-the-Surface-Book/"/>
+    <id>http://www.apnorton.com/blog/2017/01/04/Machine-Learning-with-the-Surface-Book/</id>
+    <published>2017-01-04T20:32:45.000Z</published>
+    <updated>2017-01-04T20:32:45.831Z</updated>
+    
+    <content type="html">&lt;p&gt;While interning at Microsoft over the summer, I received a first-generation Surface Book with an i5-6300U CPU (2.4 GHz dual core with up to 3.0 GHz), 8GB RAM, and a “GeForce GPU” (officially unnamed, but believed to be equivalent to a GT 940).  This is a huge step up from my older laptop, so I wanted to set it up for my ML work.  In this post, I’ll outline how I set it up with TensorFlow and GPU acceleration.&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;CUDA-cuDNN&quot;&gt;&lt;a href=&quot;#CUDA-cuDNN&quot; class=&quot;headerlink&quot; title=&quot;CUDA + cuDNN&quot;&gt;&lt;/a&gt;CUDA + cuDNN&lt;/h2&gt;&lt;p&gt;If you want to use GPU acceleration, the typical way to do so is with NVIDIA’s CUDA API.  CUDA 8.0 is compatible with the Surface Book and is (as of this writing) the most up-to-date version of CUDA.  Download it &lt;a href=&quot;https://developer.nvidia.com/cuda-downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;from the NVIDIA website&lt;/a&gt; and run their installer.&lt;/p&gt;
+&lt;p&gt;For work with deep learning, you’ll also want to install cuDNN.  To install, just &lt;a href=&quot;https://developer.nvidia.com/cudnn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;download&lt;/a&gt; the library from NVIDIA’s website and unzip it in a convenient place (I chose &lt;code&gt;C:\cudnn&lt;/code&gt;).  The only “installation” you need to do is to add &lt;code&gt;C:\cudnn\bin&lt;/code&gt; to your &lt;code&gt;PATH&lt;/code&gt; environment variable.&lt;/p&gt;
+&lt;h2 id=&quot;Python&quot;&gt;&lt;a href=&quot;#Python&quot; class=&quot;headerlink&quot; title=&quot;Python&quot;&gt;&lt;/a&gt;Python&lt;/h2&gt;&lt;p&gt;GPU acceleration is where you’re going to get the best performance improvements when running TensorFlow.  However, we might as well set up Python in a way that will run as fast as we can.  &lt;/p&gt;
+&lt;p&gt;I installed the &lt;a href=&quot;https://software.intel.com/intel-distribution-for-python&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;em&gt;Intel Distribution for Python&lt;/em&gt;&lt;/a&gt;.  This is a clone of Python 3.5, but compiled with optimizations for Intel CPUs and packaged with optimized versions of common libraries like &lt;code&gt;sklearn&lt;/code&gt;, &lt;code&gt;pandas&lt;/code&gt;, &lt;code&gt;numpy&lt;/code&gt;, and more.  It’s a free download from Intel, but it is officially still in Beta.  Thus far, I haven’t run into any problems using it with TensorFlow (but will update this post if I do).&lt;/p&gt;
+&lt;p&gt;To install Intel Python, just download and run the installer; I installed this to &lt;code&gt;C:\IntelPython35&lt;/code&gt;.  If you install it in this location, add &lt;code&gt;C:\IntelPython35\&lt;/code&gt; and &lt;code&gt;C:\IntelPython35\Scripts&lt;/code&gt; to your &lt;code&gt;PATH&lt;/code&gt; environment variable.  (Adding &lt;code&gt;\Scripts&lt;/code&gt; to your path allows you to use &lt;code&gt;pip&lt;/code&gt; or &lt;code&gt;jupyter&lt;/code&gt; directly from the commandline.)&lt;/p&gt;
+&lt;p&gt;If you decide to use a different installation of Python, make sure you’re installing Python 3.5 and not the recent release of Python 3.6; as of this writing, installing TensorFlow on Windows with Python 3.6 and above is &lt;a href=&quot;https://github.com/tensorflow/tensorflow/issues/6533&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;not supported&lt;/a&gt;. &lt;/p&gt;
+&lt;h2 id=&quot;TensorFlow&quot;&gt;&lt;a href=&quot;#TensorFlow&quot; class=&quot;headerlink&quot; title=&quot;TensorFlow&quot;&gt;&lt;/a&gt;TensorFlow&lt;/h2&gt;&lt;p&gt;My understanding is that compiling TensorFlow from source using Intel’s &lt;code&gt;icc&lt;/code&gt; and BLAS/LAPACK libraries will give you the best performance, but I  don’t have a permanent license to these, and so just installed with &lt;code&gt;pip&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The version of &lt;code&gt;pip&lt;/code&gt; included with Intel Python is quite old, so the first step here is to upgrade it using &lt;code&gt;python -m pip install --upgrade pip&lt;/code&gt;.  Following this, we need to download the TensorFlow wheel from Google.  The up-to-date link can be found &lt;a href=&quot;https://www.tensorflow.org/get_started/os_setup#pip_installation_on_windows&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;here&lt;/a&gt;, but the current link is for &lt;a href=&quot;https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-win_amd64.whl&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;v0.12.1 with GPU support&lt;/a&gt;.  (I found that downloading the wheel has better success than running &lt;code&gt;pip&lt;/code&gt; directly on the URL.)&lt;/p&gt;
+&lt;p&gt;Finally, execute &lt;code&gt;pip install --upgrade [TF-downloaded-file]&lt;/code&gt; to install TensorFlow.  This should finish somewhat quickly, and then you are done!&lt;/p&gt;
+&lt;p&gt;When I first installed TensorFlow, I had some issues with an existing &lt;code&gt;setuptools&lt;/code&gt; installation and was getting an error similar to:&lt;/p&gt;
+&lt;figure class=&quot;highlight gherkin&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Installing collected packages: six, setuptools, protobuf, numpy, tensorflow&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Found existing installation: setuptools 19.1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;Cannot remove entries from nonexistent file C:\IntelPython35\Lib\site-packages\easy-install.pth&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;This was &lt;a href=&quot;https://github.com/tensorflow/tensorflow/issues/622&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;raised as an issue&lt;/a&gt; (&lt;a href=&quot;https://github.com/tensorflow/tensorflow/issues/135&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;and another issue&lt;/a&gt;) on the TensorFlow GitHub.  The solution that worked for me was to run the following:&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; -I &lt;span class=&quot;comment&quot;&gt;--upgrade setuptools&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;--upgrade [TF-downloaded-file]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;Testing-the-Installation&quot;&gt;&lt;a href=&quot;#Testing-the-Installation&quot; class=&quot;headerlink&quot; title=&quot;Testing the Installation&quot;&gt;&lt;/a&gt;Testing the Installation&lt;/h2&gt;&lt;p&gt;Open up your terminal, and we’ll run a few commands: &lt;/p&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ python&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&amp;gt; import tensorflow as tf&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&amp;gt; a = tf.constant(&lt;span class=&quot;number&quot;&gt;12&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&amp;gt; b = tf.constant(&lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&amp;gt; sess = tf.Session()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&amp;gt; print(sess.run(a+b))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;42&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;If it printed 42 at the end, then it works!  I recommend taking a look at the &lt;a href=&quot;https://www.tensorflow.org/get_started/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TensorFlow MNIST tutorials&lt;/a&gt; after this, as they introduce TensorFlow’s capabilities quite nicely.&lt;/p&gt;
+&lt;p&gt;At one point, I had a problem where any call to &lt;code&gt;tf.Session()&lt;/code&gt; or &lt;code&gt;tf.InteractiveSession()&lt;/code&gt; would cause Python to crash without displaying any error (Windows would display a “This process has stopped responding” dialog box and kill Python after a minute or so).  I never found out &lt;em&gt;why&lt;/em&gt; this happened, but restarting my computer resolved the issue and I haven’t experienced it again.&lt;/p&gt;
+&lt;p&gt;If you’re curious whether your GPU utilized, look at the debug information that was printed after running &lt;code&gt;tf.Session()&lt;/code&gt;.  If it includes lines like the below (some unnecessary path names trimmed), then the GPU was used:&lt;/p&gt;
+&lt;figure class=&quot;highlight qml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Found device &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;properties&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;: GeForce GPU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;major&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;minor&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;memoryClockRate (GHz) &lt;span class=&quot;number&quot;&gt;0.993&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pciBusID &lt;span class=&quot;number&quot;&gt;0000&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;01&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;00.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Total &lt;span class=&quot;attribute&quot;&gt;memory&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1.00&lt;/span&gt;GiB&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;em&gt;Credit where credit is due! When I was performing my install, I was greatly aided by &lt;a href=&quot;http://www.heatonresearch.com/2017/01/01/tensorflow-windows-gpu.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;this blog post&lt;/a&gt; from Heaton Research.&lt;/em&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;While interning at Microsoft over the summer, I received a first-generation Surface Book with an i5-6300U CPU (2.4 GHz dual core with up to 3.0 GHz), 8GB RAM, and a “GeForce GPU” (officially unnamed, but believed to be equivalent to a GT 940).  This is a huge step up from my older laptop, so I wanted to set it up for my ML work.  In this post, I’ll outline how I set it up with TensorFlow and GPU acceleration.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="computer-science" scheme="http://www.apnorton.com/blog/categories/computer-science/"/>
+    
+      <category term="tools" scheme="http://www.apnorton.com/blog/categories/computer-science/tools/"/>
+    
+    
+      <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
+    
+      <category term="data" scheme="http://www.apnorton.com/blog/tags/data/"/>
+    
+  </entry>
   
   <entry>
     <title>Visualizing Multidimensional Data in Python</title>
@@ -226,11 +274,11 @@
       <category term="seattle" scheme="http://www.apnorton.com/blog/categories/fun/seattle/"/>
     
     
+      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
+    
       <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
     
       <category term="internship" scheme="http://www.apnorton.com/blog/tags/internship/"/>
-    
-      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
     
       <category term="books" scheme="http://www.apnorton.com/blog/tags/books/"/>
     
@@ -280,9 +328,9 @@
       <category term="tools" scheme="http://www.apnorton.com/blog/categories/computer-science/tools/"/>
     
     
-      <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
-    
       <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
+    
+      <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
     
   </entry>
   
@@ -405,9 +453,9 @@ D_n &amp;amp;= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
       <category term="book-reviews" scheme="http://www.apnorton.com/blog/categories/book-reviews/"/>
     
     
-      <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
-    
       <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
+    
+      <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
     
       <category term="general-computing" scheme="http://www.apnorton.com/blog/tags/general-computing/"/>
     
