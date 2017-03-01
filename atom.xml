@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://www.apnorton.com/blog/"/>
-  <updated>2017-03-01T04:05:39.527Z</updated>
+  <updated>2017-03-01T04:10:22.519Z</updated>
   <id>http://www.apnorton.com/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.apnorton.com/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/"/>
     <id>http://www.apnorton.com/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/</id>
     <published>2017-03-01T04:05:39.000Z</published>
-    <updated>2017-03-01T04:05:39.527Z</updated>
+    <updated>2017-03-01T04:10:22.519Z</updated>
     
     <content type="html">&lt;p&gt;For the past couple years, I have worked as a teaching assistant for UVa’s CS 2150 (Program and Data Representation) course.  We recently started a &lt;a href=&quot;https://groupme.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GroupMe&lt;/a&gt; chat for the course staff, and I thought it would be fun to create a chatbot to help remind all the TAs to submit timesheets, keep track of when people are holding office hours, and remember when/where TA meetings are being held.  Setting up a basic chatbot is a lot simpler than it sounds and is really fun–I wrote my bot from scratch using Python in just one day.&lt;/p&gt;
 &lt;img src=&quot;/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/screenshot.png&quot; alt=&quot;The 2150 chatbot&quot; title=&quot;The 2150 chatbot&quot;&gt;
@@ -76,6 +76,14 @@
     
     </summary>
     
+      <category term="computer-science" scheme="http://www.apnorton.com/blog/categories/computer-science/"/>
+    
+      <category term="projects" scheme="http://www.apnorton.com/blog/categories/computer-science/projects/"/>
+    
+    
+      <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
+    
+      <category term="chatbots" scheme="http://www.apnorton.com/blog/tags/chatbots/"/>
     
   </entry>
   
@@ -340,11 +348,11 @@
       <category term="seattle" scheme="http://www.apnorton.com/blog/categories/fun/seattle/"/>
     
     
-      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
-    
       <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
     
       <category term="internship" scheme="http://www.apnorton.com/blog/tags/internship/"/>
+    
+      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
     
       <category term="books" scheme="http://www.apnorton.com/blog/tags/books/"/>
     
@@ -394,9 +402,9 @@
       <category term="tools" scheme="http://www.apnorton.com/blog/categories/computer-science/tools/"/>
     
     
-      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
-    
       <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
+    
+      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
     
   </entry>
   
@@ -519,13 +527,13 @@ D_n &amp;amp;= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
       <category term="book-reviews" scheme="http://www.apnorton.com/blog/categories/book-reviews/"/>
     
     
-      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
-    
       <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
     
-      <category term="books" scheme="http://www.apnorton.com/blog/tags/books/"/>
+      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
     
       <category term="general-computing" scheme="http://www.apnorton.com/blog/tags/general-computing/"/>
+    
+      <category term="books" scheme="http://www.apnorton.com/blog/tags/books/"/>
     
   </entry>
   
