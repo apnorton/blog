@@ -1,11 +1,11 @@
 title: A Brief Exploration of a Möbius Transformation
-categories:
-  - math
-    - calculus
 tags:
   - math
-
+categories:
+  - math - calculus
+date: 2017-04-18 20:05:42
 ---
+
 
 As part of a recent homework set in my complex analysis course, I was tasked with a problem that required a slight generalization on part of [Schwarz's Lemma][schwarz]:
 
