@@ -1,6 +1,11 @@
 title: How I wrote a GroupMe Chatbot in 24 hours
 date: 2017-02-28 23:05:39
 tags:
+  - computer-science
+  - chatbots
+categories:
+  - computer-science
+  - projects
 ---
 
 
