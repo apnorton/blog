@@ -2,7 +2,8 @@ title: A Brief Exploration of a Möbius Transformation
 tags:
   - math
 categories:
-  - math - calculus
+  - math 
+    - calculus
 date: 2017-04-18 20:05:42
 ---
 
