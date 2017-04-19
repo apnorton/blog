@@ -9,8 +9,7 @@ tags:
 
 As part of a recent homework set in my complex analysis course, I was tasked with a problem that required a slight generalization on part of [Schwarz's Lemma][schwarz]:
 
-> **Lemma (Schwarz):** Let $f$ be analytic on the unit disk with $|f(z)| \leq 1$ for all $z$ on the disk and $f(0) = 0$.  Then $|f(z)| < |z|$ and $f'(0)\leq 1$.
->
+> **Lemma (Schwarz):** Let $f$ be analytic on the unit disk with $|f(z)| \leq 1$ for all $z$ on the disk and $f(0) = 0$.  Then $|f(z)| < |z|$ and $f'(0)\leq 1$.  
 > If either $|f(z)|=|z|$ for some $z\neq0$ or if $|f'(0)|=1$, then $f$ is a rotation, i.e., $f(z)=az$ for some complex constant $a$ with $|a|=1$. 
 
 The homework assignment asked us (within the context of a larger problem) to consider the case when $f(\zeta) = 0$ for some $\zeta \neq 0$ on the interior of the unit disk.  The secret to this problem was to find some analytic function $\varphi$ that maps the unit disk to itself, but *swaps* $0$ and $\zeta$.  Then, we may consider $\varphi^{-1}\circ f\circ \varphi$ and apply Schwarz's Lemma.
