@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://www.apnorton.com/blog/"/>
-  <updated>2017-04-19T00:08:35.455Z</updated>
+  <updated>2017-04-19T00:15:50.918Z</updated>
   <id>http://www.apnorton.com/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.apnorton.com/blog/2017/04/18/A-Brief-Exploration-of-a-Mobius-Transformation/"/>
     <id>http://www.apnorton.com/blog/2017/04/18/A-Brief-Exploration-of-a-Mobius-Transformation/</id>
     <published>2017-04-19T00:05:42.000Z</published>
-    <updated>2017-04-19T00:08:35.455Z</updated>
+    <updated>2017-04-19T00:15:50.918Z</updated>
     
     <content type="html">&lt;p&gt;As part of a recent homework set in my complex analysis course, I was tasked with a problem that required a slight generalization on part of &lt;a href=&quot;http://mathworld.wolfram.com/SchwarzsLemma.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Schwarz’s Lemma&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -51,7 +51,9 @@
     
     </summary>
     
-      <category term="math - calculus" scheme="http://www.apnorton.com/blog/categories/math-calculus/"/>
+      <category term="math" scheme="http://www.apnorton.com/blog/categories/math/"/>
+    
+      <category term="calculus" scheme="http://www.apnorton.com/blog/categories/math/calculus/"/>
     
     
       <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
