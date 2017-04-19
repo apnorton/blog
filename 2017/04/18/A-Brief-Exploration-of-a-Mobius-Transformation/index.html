@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>A Brief Exploration of a Möbius Transformation | apnorton | blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="As part of a recent homework set in my complex analysis course, I was tasked with a problem that required a slight generalization on part of Schwarz’s Lemma:
+
+Lemma (Schwarz): Let $f$ be analytic on t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Brief Exploration of a Möbius Transformation">
+<meta property="og:url" content="http://www.apnorton.com/blog/2017/04/18/A-Brief-Exploration-of-a-Mobius-Transformation/index.html">
+<meta property="og:site_name" content="apnorton | blog">
+<meta property="og:description" content="As part of a recent homework set in my complex analysis course, I was tasked with a problem that required a slight generalization on part of Schwarz’s Lemma:
+
+Lemma (Schwarz): Let $f$ be analytic on t">
+<meta property="og:image" content="http://www.apnorton.com/blog/blog/2017/04/18/A-Brief-Exploration-of-a-Mobius-Transformation/plots.png">
+<meta property="og:updated_time" content="2017-04-19T00:05:42.890Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A Brief Exploration of a Möbius Transformation">
+<meta name="twitter:description" content="As part of a recent homework set in my complex analysis course, I was tasked with a problem that required a slight generalization on part of Schwarz’s Lemma:
+
+Lemma (Schwarz): Let $f$ be analytic on t">
+<meta name="twitter:image" content="http://www.apnorton.com/blog/blog/2017/04/18/A-Brief-Exploration-of-a-Mobius-Transformation/plots.png">
+<meta name="twitter:creator" content="@_apnorton">
+  
+    <link rel="alternative" href="/blog/atom.xml" title="apnorton | blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-63901553-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">apnorton | blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Blog</a>
+        
+          <a class="main-nav-link" href="http://www.apnorton.com/">Web Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.apnorton.com/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-A-Brief-Exploration-of-a-Mobius-Transformation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2017/04/18/A-Brief-Exploration-of-a-Mobius-Transformation/" class="article-date">
+  <time datetime="2017-04-19T00:05:42.000Z" itemprop="datePublished">2017-04-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/math-calculus/">math - calculus</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      A Brief Exploration of a Möbius Transformation
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>As part of a recent homework set in my complex analysis course, I was tasked with a problem that required a slight generalization on part of <a href="http://mathworld.wolfram.com/SchwarzsLemma.html" target="_blank" rel="external">Schwarz’s Lemma</a>:</p>
+<blockquote>
+<p><strong>Lemma (Schwarz):</strong> Let $f$ be analytic on the unit disk with $|f(z)| \leq 1$ for all $z$ on the disk and $f(0) = 0$.  Then $|f(z)| &lt; |z|$ and $f’(0)\leq 1$.<br>If either $|f(z)|=|z|$ for some $z\neq0$ or if $|f’(0)|=1$, then $f$ is a rotation, i.e., $f(z)=az$ for some complex constant $a$ with $|a|=1$. </p>
+</blockquote>
+<p>The homework assignment asked us (within the context of a larger problem) to consider the case when $f(\zeta) = 0$ for some $\zeta \neq 0$ on the interior of the unit disk.  The secret to this problem was to find some analytic function $\varphi$ that maps the unit disk to itself, but <em>swaps</em> $0$ and $\zeta$.  Then, we may consider $\varphi^{-1}\circ f\circ \varphi$ and apply Schwarz’s Lemma.</p>
+<a id="more"></a>
+<h2 id="Properties-of-the-transformation"><a href="#Properties-of-the-transformation" class="headerlink" title="Properties of the transformation"></a>Properties of the transformation</h2><p>The appropriate map, which is a particular Möbius transformation, is given by the following:</p>
+<p>$$\varphi_\zeta(z) = \frac{\zeta - z}{1-\overline{\zeta}z}$$</p>
+<p>Now, if $|z| = 1$, then $|\varphi_\zeta(z)| = |\overline{z} \varphi_\zeta(z)| = \left|\frac{\overline{z}\zeta-1}{1-\overline{\zeta}z}\right| = 1$.  Therefore, this map takes the boundary of the unit disk to itself.</p>
+<p>Further, this $\varphi_\zeta$ is analytic within the unit disk, as its only singularity occurs when $|z| &gt; 1$ (since this occurs when $z = \frac{1}{\overline{\zeta}}$ and $\left|\overline{\zeta}\right| &lt; 1$).  And, finally, since $\varphi_\zeta$ is non-constant, the <a href="http://mathworld.wolfram.com/MaximumModulusPrinciple.html" target="_blank" rel="external">maximum modulus principle</a> tells us that $|\varphi_\zeta(z)| &lt; 1$ when $|z| &lt; 1$.  </p>
+<p>Therefore, $\varphi_\zeta$ maps the unit disk onto itself, where $\varphi_\zeta(\zeta) = 0$ and $\varphi_\zeta(0) = \zeta$.</p>
+<p>Another useful feature of this map is that it is an involution.   That is, $\varphi_\zeta^{-1} = \varphi_\zeta$.  An application of Schwarz’s Lemma shows this immediately: since $\varphi\circ\varphi$ fixes <em>two</em> points in the unit disk (one of them zero) and satisfies the modulus bound, we can conclude that $\varphi\circ\varphi$ is the identity.  Therefore, $\varphi$ is its own inverse.</p>
+<h2 id="Impact-of-this-map-on-the-unit-disk"><a href="#Impact-of-this-map-on-the-unit-disk" class="headerlink" title="Impact of this map on the unit disk"></a>Impact of this map on the unit disk</h2><p>I was curious what this mapping does to the values on the unit disk.  We’ve clearly swapped $\zeta$ and $0$, but the map must maintain analyticity on the unit disk, so it must do more than just that.  I wanted to know how this distortion affects the rest of the values on the disk.  So, I wrote a quick Python program to generate a couple of plots:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> pi</span><br><span class="line"><span class="keyword">from</span> cmath <span class="keyword">import</span> phase <span class="keyword">as</span> arg</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a 2D grid on which to evaluate the function</span></span><br><span class="line">xs = np.linspace(<span class="number">-1</span>, <span class="number">1</span>, num = <span class="number">700</span>)</span><br><span class="line">ys = np.linspace(<span class="number">-1</span>, <span class="number">1</span>, num = <span class="number">700</span>)</span><br><span class="line">X, Y = np.meshgrid(xs, ys)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Round it off to be only the unit circle</span></span><br><span class="line">r = np.sqrt(X**<span class="number">2</span> + Y**<span class="number">2</span>)</span><br><span class="line">X = np.ma.masked_where(r &gt; <span class="number">1</span>, X)</span><br><span class="line">Y = np.ma.masked_where(r &gt; <span class="number">1</span>, Y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># The new "zeta" value</span></span><br><span class="line">zeta = <span class="number">0.2</span> + <span class="number">0.38j</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The involution, phi</span></span><br><span class="line"><span class="meta">@np.vectorize</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">phi</span><span class="params">(z)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (zeta - z) / (<span class="number">1</span>-zeta.conjugate()*z)</span><br><span class="line"></span><br><span class="line">vabs = np.vectorize(abs)</span><br><span class="line">varg = np.vectorize(arg)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Determine the argument and modulus of points on the unit circle</span></span><br><span class="line">Z  = X+Y*<span class="number">1.0j</span></span><br><span class="line"></span><br><span class="line">F1 = vabs(phi(Z))</span><br><span class="line">F2 = vabs(Z)</span><br><span class="line">F3 = varg(phi(Z))</span><br><span class="line">F4 = varg(Z)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot them all!</span></span><br><span class="line">F = [F1, F2, F3, F4]</span><br><span class="line">fig, axes = plt.subplots(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">titles = [</span><br><span class="line">    <span class="string">'|$\\varphi_\\zeta(z)$|'</span>, </span><br><span class="line">    <span class="string">'|$z$|'</span>,</span><br><span class="line">    <span class="string">'Arg$(\\varphi_\\zeta(z))$'</span>,</span><br><span class="line">    <span class="string">'Arg$(z)$'</span>,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">t = np.linspace(<span class="number">0</span>, <span class="number">2</span>*pi, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, ax <span class="keyword">in</span> enumerate(np.reshape(axes, (<span class="number">-1</span>,))):</span><br><span class="line">    <span class="comment"># draw the heatmap</span></span><br><span class="line">    ax.pcolormesh(X, Y, F[i])</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># draw bounding circle</span></span><br><span class="line">    ax.plot(np.cos(t), np.sin(t), linewidth=<span class="number">2</span>, color=<span class="string">'black'</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># adjust the axis labels</span></span><br><span class="line">    ax.set_aspect(<span class="string">'equal'</span>)</span><br><span class="line">    ax.set_xlim(<span class="number">-1.1</span>, <span class="number">1.1</span>)</span><br><span class="line">    ax.set_ylim(<span class="number">-1.1</span>, <span class="number">1.1</span>)</span><br><span class="line">    ax.set_title(titles[i])</span><br><span class="line">    </span><br><span class="line">plt.tight_layout() <span class="comment"># helps with spacing</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>Below, we’ve plotted the magnitude and argument (angle) of $z$ and $\varphi_\zeta(z)$ side-by-side.  We can now see that, in terms of magnitude, it’s just as if the map “shifted” over the origin, squeezing and pulling the surrounding values to maintain analyticity.  However, it also <em>twisted and reflected</em> the values of $z$ on each circle around the origin.  (This can be seen through the curve of the $\mathrm{Arg}(\varphi_\zeta(z))$ plot.)</p>
+<img src="/blog/2017/04/18/A-Brief-Exploration-of-a-Mobius-Transformation/plots.png" alt="Resulting plots" title="Resulting plots">
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>This doesn’t really serve much purpose in and of itself, but it helped build my intuition of what is happening when I apply the function $\varphi$ and developed my abilities in <code>numpy</code> and <code>matplotlib</code> usage.  The Schwarz Lemma is an interesting topic in Complex Analysis, and I based some of my initial work on a 2010 paper by Dr. Harold P. Boas, entitled <a href="https://arxiv.org/abs/1001.0559" target="_blank" rel="external"><em>Julius and Julia: Mastering the art of the Schwarz lemma</em></a>.  Of particular note is “Section 3: Change of Base Point,” where he develops and discusses the map $\varphi$.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.apnorton.com/blog/blog/2017/04/18/A-Brief-Exploration-of-a-Mobius-Transformation/" data-id="cj1o7xjkz000znggct8573e62" class="article-share-link">Share</a>
+      
+        <a href="http://www.apnorton.com/blog/blog/2017/04/18/A-Brief-Exploration-of-a-Mobius-Transformation/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/math/">math</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How I wrote a GroupMe Chatbot in 24 hours</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2017/04/18/A-Brief-Exploration-of-a-Mobius-Transformation/">A Brief Exploration of a Möbius Transformation</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/">How I wrote a GroupMe Chatbot in 24 hours</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2017/01/04/Machine-Learning-with-the-Surface-Book/">TensorFlow with the Surface Book</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/">Visualizing Multidimensional Data in Python</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/11/09/Election-2016/">Election 2016: Moving Forward</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/book-reviews/">book-reviews</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/">computer-science</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/algorithms/">algorithms</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/contests/">contests</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/programming-languages/">programming-languages</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/projects/">projects</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/tools/">tools</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/fun/">fun</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/fun/seattle/">seattle</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/">math</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/computational-geometry/">computational-geometry</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/number-theory/">number-theory</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math-calculus/">math - calculus</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/meta/">meta</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/opinion/">opinion</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/algorithms/" style="font-size: 15px;">algorithms</a> <a href="/blog/tags/books/" style="font-size: 12.5px;">books</a> <a href="/blog/tags/chatbots/" style="font-size: 10px;">chatbots</a> <a href="/blog/tags/computer-science/" style="font-size: 17.5px;">computer-science</a> <a href="/blog/tags/contests/" style="font-size: 10px;">contests</a> <a href="/blog/tags/data/" style="font-size: 12.5px;">data</a> <a href="/blog/tags/functional-programming/" style="font-size: 10px;">functional-programming</a> <a href="/blog/tags/general-computing/" style="font-size: 10px;">general-computing</a> <a href="/blog/tags/internship/" style="font-size: 12.5px;">internship</a> <a href="/blog/tags/life/" style="font-size: 12.5px;">life</a> <a href="/blog/tags/math/" style="font-size: 20px;">math</a> <a href="/blog/tags/meta/" style="font-size: 12.5px;">meta</a> <a href="/blog/tags/number-theory/" style="font-size: 10px;">number-theory</a> <a href="/blog/tags/opinion/" style="font-size: 10px;">opinion</a> <a href="/blog/tags/project-euler/" style="font-size: 10px;">project-euler</a> <a href="/blog/tags/websites/" style="font-size: 10px;">websites</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/07/">July 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/05/">May 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Andrew Norton<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Blog</a>
+  
+    <a href="http://www.apnorton.com/" class="mobile-nav-link">Web Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'apnorton';
+  
+  var disqus_url = 'http://www.apnorton.com/blog/blog/2017/04/18/A-Brief-Exploration-of-a-Mobius-Transformation/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+  </div>
+
+<!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+</body>
+</html>
