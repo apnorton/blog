@@ -348,11 +348,11 @@
       <category term="seattle" scheme="http://www.apnorton.com/blog/categories/fun/seattle/"/>
     
     
+      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
+    
       <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
     
       <category term="internship" scheme="http://www.apnorton.com/blog/tags/internship/"/>
-    
-      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
     
       <category term="books" scheme="http://www.apnorton.com/blog/tags/books/"/>
     
@@ -402,9 +402,9 @@
       <category term="tools" scheme="http://www.apnorton.com/blog/categories/computer-science/tools/"/>
     
     
-      <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
-    
       <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
+    
+      <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
     
   </entry>
   
@@ -527,9 +527,9 @@ D_n &amp;amp;= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
       <category term="book-reviews" scheme="http://www.apnorton.com/blog/categories/book-reviews/"/>
     
     
-      <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
-    
       <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
+    
+      <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
     
       <category term="general-computing" scheme="http://www.apnorton.com/blog/tags/general-computing/"/>
     
