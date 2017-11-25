@@ -77,6 +77,132 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Raspberry-Pi-Default-Groups" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2017/11/25/Raspberry-Pi-Default-Groups/" class="article-date">
+  <time datetime="2017-11-25T18:54:28.000Z" itemprop="datePublished">2017-11-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/electronics/">electronics</a>►<a class="article-category-link" href="/blog/categories/electronics/raspberry-pi/">raspberry-pi</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2017/11/25/Raspberry-Pi-Default-Groups/">Raspberry Pi Default Groups</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In setting up my Raspberry Pi for a home fileshare, I noticed the <code>pi</code> user is a part of several default groups.  These are:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pi adm dialout cdrom sudo <span class="selector-tag">audio</span> <span class="selector-tag">video</span> plugdev games users <span class="selector-tag">input</span> netdev gpio i2c spi</span><br></pre></td></tr></table></figure>
+<p>(I’m using the 2017-09-07 image of Raspbian Stretch Lite.)</p>
+<p>This looked like a lot of groups to me!  To make sure my new user only has the minimum permissions needed, let’s look at the what each group is and why it’s there.</p>
+<h2 id="Group-Descriptions"><a href="#Group-Descriptions" class="headerlink" title="Group Descriptions"></a>Group Descriptions</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">pi</td>
+<td style="text-align:left">User-specific group.  A group is automatically created for each new user; you can ignore this.</td>
+</tr>
+<tr>
+<td style="text-align:left">adm</td>
+<td style="text-align:left">Allows access to log files in <code>/var/log</code> and using <code>xconsole</code></td>
+</tr>
+<tr>
+<td style="text-align:left">dialout</td>
+<td style="text-align:left">Allows access to serial ports/modem reconfiguration, etc.</td>
+</tr>
+<tr>
+<td style="text-align:left">cdrom</td>
+<td style="text-align:left">Uncreatively, this group enables access to optical drives.</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo</td>
+<td style="text-align:left">Enables <code>sudo</code> access for the user.</td>
+</tr>
+<tr>
+<td style="text-align:left">audio</td>
+<td style="text-align:left">Allows access to audio devices like microphones and soundcards</td>
+</tr>
+<tr>
+<td style="text-align:left">video</td>
+<td style="text-align:left">Allows graphics card/webcam access.</td>
+</tr>
+<tr>
+<td style="text-align:left">plugdev</td>
+<td style="text-align:left">Enables access to external storage devices</td>
+</tr>
+<tr>
+<td style="text-align:left">games</td>
+<td style="text-align:left">I’m unsure of this.  No files belong to this group by default, and I cannot find references to it online.</td>
+</tr>
+<tr>
+<td style="text-align:left">users</td>
+<td style="text-align:left">Appears to be a Pi-specific group enabling access to <code>/opt/vc/src/hello_pi/</code> directory and contained files.</td>
+</tr>
+<tr>
+<td style="text-align:left">input</td>
+<td style="text-align:left">Appears to give access to the <code>/dev/input/mice</code> folder and nothing else.</td>
+</tr>
+<tr>
+<td style="text-align:left">netdev</td>
+<td style="text-align:left">Enables access to network interfaces</td>
+</tr>
+<tr>
+<td style="text-align:left">gpio</td>
+<td style="text-align:left">Pi-specific group for GPIO pin access.</td>
+</tr>
+<tr>
+<td style="text-align:left">i2c</td>
+<td style="text-align:left">Similar to the above, but for I2C access. Generated after installing <code>i2c-tools</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left">spi</td>
+<td style="text-align:left">Similar to the above, but for the SPI bus.</td>
+</tr>
+</tbody>
+</table>
+<p>So, based on my application (and future use of the Pi), I’m not adding the <code>cdrom</code>, <code>games</code>, and <code>users</code> groups to my new user.</p>
+<h2 id="Helpful-Resources"><a href="#Helpful-Resources" class="headerlink" title="Helpful Resources"></a>Helpful Resources</h2><p>The above descriptions were sourced based on the following:</p>
+<ul>
+<li><a href="https://wiki.debian.org/SystemGroups" target="_blank" rel="external">SystemGroups - Debian Wiki</a></li>
+<li><a href="https://wiki.ubuntu.com/Security/Privileges" target="_blank" rel="external">Privileges - Ubuntu Wiki</a></li>
+<li>Molloy, Derek.  <em>Exploring Raspberry Pi: Interfacing to the Real World with Embedded Linux.</em> <a href="https://books.google.com/books?id=ro0gCwAAQBAJ&amp;pg=PA270&amp;lpg=PA270&amp;source=bl&amp;ots=0T50hVUvy5&amp;sig=6n_Hi0U2rCyu7pvx5LUqXJfDhbE&amp;hl=en&amp;sa=X&amp;ved=0ahUKEwjG6qGorNrXAhUNRN8KHcndBDQQ6AEISTAE#v=onepage&amp;q&amp;f=false" target="_blank" rel="external">Page 270</a>. </li>
+<li><a href="https://www.raspberrypi.org/forums/viewtopic.php?p=158107#p158107" target="_blank" rel="external">I2C group discussion on Raspberry Pi forums</a> </li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.apnorton.com/blog/blog/2017/11/25/Raspberry-Pi-Default-Groups/" data-id="cjafpawoe002r4cgcyryjcgcr" class="article-share-link">Share</a>
+      
+        <a href="http://www.apnorton.com/blog/blog/2017/11/25/Raspberry-Pi-Default-Groups/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/computer-science/">computer-science</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/general-computing/">general-computing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hardware/">hardware</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-How-to-Request-a-Regrade" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2017/07/04/How-to-Request-a-Regrade/" class="article-date">
@@ -113,7 +239,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2017/07/04/How-to-Request-a-Regrade/" data-id="cj4q29ul6000v6dgcjtnl1rls" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2017/07/04/How-to-Request-a-Regrade/" data-id="cjafpawo9002j4cgcohwphtax" class="article-share-link">Share</a>
       
         <a href="http://www.apnorton.com/blog/blog/2017/07/04/How-to-Request-a-Regrade/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -166,7 +292,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2017/04/18/A-Brief-Exploration-of-a-Mobius-Transformation/" data-id="cj4q29uk400076dgc3gezshb6" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2017/04/18/A-Brief-Exploration-of-a-Mobius-Transformation/" data-id="cjafpawml001c4cgc5br27w71" class="article-share-link">Share</a>
       
         <a href="http://www.apnorton.com/blog/blog/2017/04/18/A-Brief-Exploration-of-a-Mobius-Transformation/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -218,7 +344,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/" data-id="cj4q29up500486dgcwdq5jbpc" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/" data-id="cjafpawo0002c4cgc146ajchn" class="article-share-link">Share</a>
       
         <a href="http://www.apnorton.com/blog/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -269,7 +395,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2017/01/04/Machine-Learning-with-the-Surface-Book/" data-id="cj4q29ula000z6dgc8o20x3li" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2017/01/04/Machine-Learning-with-the-Surface-Book/" data-id="cjafpawoc002n4cgcu5jgrfzs" class="article-share-link">Share</a>
       
         <a href="http://www.apnorton.com/blog/blog/2017/01/04/Machine-Learning-with-the-Surface-Book/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -324,7 +450,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/" data-id="cj4q29up8004a6dgci5d4oo86" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/" data-id="cjafpawom002z4cgc5soybkdz" class="article-share-link">Share</a>
       
         <a href="http://www.apnorton.com/blog/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -374,7 +500,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2016/11/09/Election-2016/" data-id="cj4q29ukl000h6dgcq7tf4ubn" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2016/11/09/Election-2016/" data-id="cjafpawnl001w4cgcmpx26pmo" class="article-share-link">Share</a>
       
         <a href="http://www.apnorton.com/blog/blog/2016/11/09/Election-2016/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -420,7 +546,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2016/10/28/Commenting/" data-id="cj4q29uk800096dgc88uxkbvi" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2016/10/28/Commenting/" data-id="cjafpawn9001l4cgca6kjtbes" class="article-share-link">Share</a>
       
         <a href="http://www.apnorton.com/blog/blog/2016/10/28/Commenting/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -472,7 +598,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2016/09/30/A-Summer-with-Microsoft/" data-id="cj4q29up200476dgcay011uej" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2016/09/30/A-Summer-with-Microsoft/" data-id="cjafpawmp001d4cgctrbbpqnc" class="article-share-link">Share</a>
       
         <a href="http://www.apnorton.com/blog/blog/2016/09/30/A-Summer-with-Microsoft/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -523,68 +649,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2016/08/07/Ada-s-Technical-Books/" data-id="cj4q29uk200056dgcikey9c3n" class="article-share-link">Share</a>
+      <a data-url="http://www.apnorton.com/blog/blog/2016/08/07/Ada-s-Technical-Books/" data-id="cjafpawms001f4cgcqsp2dabi" class="article-share-link">Share</a>
       
         <a href="http://www.apnorton.com/blog/blog/2016/08/07/Ada-s-Technical-Books/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/books/">books</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/computer-science/">computer-science</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/internship/">internship</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/math/">math</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Visualizing-Graphs-in-Program-Output" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/" class="article-date">
-  <time datetime="2016-03-08T22:11:35.000Z" itemprop="datePublished">2016-03-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/computer-science/">computer-science</a>►<a class="article-category-link" href="/blog/categories/computer-science/tools/">tools</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/">Visualizing Graphs in Program Output</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Many computer science problems utilize <a href="https://en.wikipedia.org/wiki/Graph_%28discrete_mathematics%29">graph</a>-based data structures.  Their use can range from explicit inclusion in an algorithm-centric problem (like path-finding) to a more “behind-the-scenes” presence in Bayesian networks or descriptions of finite automata.  Unfortunately, visualizing large graphs can be difficult to do, especially for debugging.  Unlike lists or dictionaries, which can be represented clearly by plain text printing, depicting a graph tends to require more graphics overhead than is reasonable for most programmers to write simply for debugging purposes.  I’ve found that <a href="http://graphviz.org/">Graphviz</a>, a free graph visualization utility, can be quite useful in debugging graph-related programs.</p>
-<h2 id="Installing-Graphviz"><a href="#Installing-Graphviz" class="headerlink" title="Installing Graphviz"></a>Installing Graphviz</h2><p>If you’re on a Debian-based Linux OS (e.g. Ubuntu), you can install Graphviz using <code>apt-get</code>.  Just run <code>$ sudo apt-get install graphviz</code> and you’ll have everything you need to complete the steps in this blog post.  Mac OS X users can use <code>brew</code> equivalently.</p>
-<p>Windows users should install using a binary downloaded from the <a href="http://graphviz.org/Download_windows.php">Graphviz Windows page</a>, but there might be some issues with setting the <code>PATH</code> variable for running in the commandline.</p>
-<h2 id="Making-a-basic-graph"><a href="#Making-a-basic-graph" class="headerlink" title="Making a basic graph"></a>Making a basic graph</h2><p>Once you’ve installed, the next thing you’ll want to do is create a basic graph to ensure the installation succeeded and to gain practice using Graphviz tools.  We do this by creating a <code>*.dot</code> file that describes the graph we wish to display.  If you’re the type of person who likes to jump right in and experiment first before reading too much, or if you love formal language specification, the <a href="http://www.graphviz.org/content/dot-language">DOT grammar</a> is fairly readable and can give a quick introduction to creating DOT files.</p>
-<p>The below is a fairly representative DOT file to demonstrate some of the capabilities of Graphviz. Open your favorite text editor, copy/paste it in, and save it as <code>firstgraph.dot</code>:</p>
-<figure class="highlight java"><figcaption><span>firstgraph.dot</span><a href="/blog/downloads/code/firstgraph.dot">view raw</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">digraph G {</span><br><span class="line">  <span class="comment">// Style information for nodes</span></span><br><span class="line">  A [style=<span class="string">"filled"</span>, color=<span class="string">".05 .3 1.0"</span>]</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Edge declarations</span></span><br><span class="line">  A -&gt; {B, C};</span><br><span class="line">  D -&gt; E [label=<span class="string">"-1"</span>];</span><br><span class="line">  E -&gt; F [label=<span class="string">"3"</span>];</span><br><span class="line">  F -&gt; D [label=<span class="string">"10"</span>];</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<p>This creates a directed graph (also called a <em>digraph</em>) with six nodes and two connected components.  Some of the edges have labels, and one of the nodes is colored.  After you’ve copied (or downloaded) this file, open up a terminal to the directory with <code>firstgraph.dot</code> in it and run <code>$ dot firstgraph.dot -Tpng -o firstgraph.png</code>.  The resulting image file should look something like the below:</p>
-<img src="/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/firstgraph.jpg" alt="The rendered `firstgraph.dot`" title="The rendered `firstgraph.dot`">
-        
-          <p class="article-more-link">
-            <a href="/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.apnorton.com/blog/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/" data-id="cj4q29uld00126dgcpfxx2qcf" class="article-share-link">Share</a>
-      
-        <a href="http://www.apnorton.com/blog/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/computer-science/">computer-science</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/math/">math</a></li></ul>
 
     </footer>
   </div>
@@ -609,6 +679,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/blog/2017/11/25/Raspberry-Pi-Default-Groups/">Raspberry Pi Default Groups</a>
+          </li>
+        
+          <li>
             <a href="/blog/2017/07/04/How-to-Request-a-Regrade/">How to Request a Regrade</a>
           </li>
         
@@ -624,10 +698,6 @@ ga('send', 'pageview');
             <a href="/blog/2017/01/04/Machine-Learning-with-the-Surface-Book/">TensorFlow with the Surface Book</a>
           </li>
         
-          <li>
-            <a href="/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/">Visualizing Multidimensional Data in Python</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -637,7 +707,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/book-reviews/">book-reviews</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/">computer-science</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/algorithms/">algorithms</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/contests/">contests</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/programming-languages/">programming-languages</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/projects/">projects</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/tools/">tools</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/fun/">fun</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/fun/seattle/">seattle</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/">math</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/calculus/">calculus</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/computational-geometry/">computational-geometry</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/number-theory/">number-theory</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/meta/">meta</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/opinion/">opinion</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/book-reviews/">book-reviews</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/">computer-science</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/algorithms/">algorithms</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/contests/">contests</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/programming-languages/">programming-languages</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/projects/">projects</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/computer-science/tools/">tools</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/electronics/">electronics</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/electronics/raspberry-pi/">raspberry-pi</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/fun/">fun</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/fun/seattle/">seattle</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/">math</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/calculus/">calculus</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/computational-geometry/">computational-geometry</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/math/number-theory/">number-theory</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/meta/">meta</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/opinion/">opinion</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -646,7 +716,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/algorithms/" style="font-size: 16.67px;">algorithms</a> <a href="/blog/tags/books/" style="font-size: 13.33px;">books</a> <a href="/blog/tags/chatbots/" style="font-size: 10px;">chatbots</a> <a href="/blog/tags/computer-science/" style="font-size: 20px;">computer-science</a> <a href="/blog/tags/contests/" style="font-size: 10px;">contests</a> <a href="/blog/tags/data/" style="font-size: 13.33px;">data</a> <a href="/blog/tags/education/" style="font-size: 10px;">education</a> <a href="/blog/tags/functional-programming/" style="font-size: 10px;">functional-programming</a> <a href="/blog/tags/general-computing/" style="font-size: 10px;">general-computing</a> <a href="/blog/tags/internship/" style="font-size: 13.33px;">internship</a> <a href="/blog/tags/life/" style="font-size: 13.33px;">life</a> <a href="/blog/tags/math/" style="font-size: 20px;">math</a> <a href="/blog/tags/meta/" style="font-size: 13.33px;">meta</a> <a href="/blog/tags/number-theory/" style="font-size: 10px;">number-theory</a> <a href="/blog/tags/opinion/" style="font-size: 13.33px;">opinion</a> <a href="/blog/tags/project-euler/" style="font-size: 10px;">project-euler</a> <a href="/blog/tags/websites/" style="font-size: 10px;">websites</a>
+      <a href="/blog/tags/algorithms/" style="font-size: 15px;">algorithms</a> <a href="/blog/tags/books/" style="font-size: 12.5px;">books</a> <a href="/blog/tags/chatbots/" style="font-size: 10px;">chatbots</a> <a href="/blog/tags/computer-science/" style="font-size: 20px;">computer-science</a> <a href="/blog/tags/contests/" style="font-size: 10px;">contests</a> <a href="/blog/tags/data/" style="font-size: 12.5px;">data</a> <a href="/blog/tags/education/" style="font-size: 10px;">education</a> <a href="/blog/tags/functional-programming/" style="font-size: 10px;">functional-programming</a> <a href="/blog/tags/general-computing/" style="font-size: 12.5px;">general-computing</a> <a href="/blog/tags/hardware/" style="font-size: 10px;">hardware</a> <a href="/blog/tags/internship/" style="font-size: 12.5px;">internship</a> <a href="/blog/tags/life/" style="font-size: 12.5px;">life</a> <a href="/blog/tags/math/" style="font-size: 17.5px;">math</a> <a href="/blog/tags/meta/" style="font-size: 12.5px;">meta</a> <a href="/blog/tags/number-theory/" style="font-size: 10px;">number-theory</a> <a href="/blog/tags/opinion/" style="font-size: 12.5px;">opinion</a> <a href="/blog/tags/project-euler/" style="font-size: 10px;">project-euler</a> <a href="/blog/tags/websites/" style="font-size: 10px;">websites</a>
     </div>
   </div>
 
@@ -655,7 +725,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/07/">July 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/05/">May 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/07/">July 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/05/">May 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 

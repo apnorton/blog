@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://www.apnorton.com/blog/"/>
-  <updated>2017-07-04T21:02:25.821Z</updated>
+  <updated>2017-11-25T18:56:11.645Z</updated>
   <id>http://www.apnorton.com/blog/</id>
   
   <author>
@@ -14,6 +14,116 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Raspberry Pi Default Groups</title>
+    <link href="http://www.apnorton.com/blog/2017/11/25/Raspberry-Pi-Default-Groups/"/>
+    <id>http://www.apnorton.com/blog/2017/11/25/Raspberry-Pi-Default-Groups/</id>
+    <published>2017-11-25T18:54:28.000Z</published>
+    <updated>2017-11-25T18:56:11.645Z</updated>
+    
+    <content type="html">&lt;p&gt;In setting up my Raspberry Pi for a home fileshare, I noticed the &lt;code&gt;pi&lt;/code&gt; user is a part of several default groups.  These are:&lt;/p&gt;
+&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pi adm dialout cdrom sudo &lt;span class=&quot;selector-tag&quot;&gt;audio&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;video&lt;/span&gt; plugdev games users &lt;span class=&quot;selector-tag&quot;&gt;input&lt;/span&gt; netdev gpio i2c spi&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;(I’m using the 2017-09-07 image of Raspbian Stretch Lite.)&lt;/p&gt;
+&lt;p&gt;This looked like a lot of groups to me!  To make sure my new user only has the minimum permissions needed, let’s look at the what each group is and why it’s there.&lt;/p&gt;
+&lt;h2 id=&quot;Group-Descriptions&quot;&gt;&lt;a href=&quot;#Group-Descriptions&quot; class=&quot;headerlink&quot; title=&quot;Group Descriptions&quot;&gt;&lt;/a&gt;Group Descriptions&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Name&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;pi&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;User-specific group.  A group is automatically created for each new user; you can ignore this.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;adm&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Allows access to log files in &lt;code&gt;/var/log&lt;/code&gt; and using &lt;code&gt;xconsole&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;dialout&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Allows access to serial ports/modem reconfiguration, etc.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;cdrom&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Uncreatively, this group enables access to optical drives.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;sudo&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Enables &lt;code&gt;sudo&lt;/code&gt; access for the user.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;audio&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Allows access to audio devices like microphones and soundcards&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;video&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Allows graphics card/webcam access.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;plugdev&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Enables access to external storage devices&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;games&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;I’m unsure of this.  No files belong to this group by default, and I cannot find references to it online.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;users&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Appears to be a Pi-specific group enabling access to &lt;code&gt;/opt/vc/src/hello_pi/&lt;/code&gt; directory and contained files.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;input&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Appears to give access to the &lt;code&gt;/dev/input/mice&lt;/code&gt; folder and nothing else.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;netdev&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Enables access to network interfaces&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;gpio&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Pi-specific group for GPIO pin access.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;i2c&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Similar to the above, but for I2C access. Generated after installing &lt;code&gt;i2c-tools&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;spi&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Similar to the above, but for the SPI bus.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;So, based on my application (and future use of the Pi), I’m not adding the &lt;code&gt;cdrom&lt;/code&gt;, &lt;code&gt;games&lt;/code&gt;, and &lt;code&gt;users&lt;/code&gt; groups to my new user.&lt;/p&gt;
+&lt;h2 id=&quot;Helpful-Resources&quot;&gt;&lt;a href=&quot;#Helpful-Resources&quot; class=&quot;headerlink&quot; title=&quot;Helpful Resources&quot;&gt;&lt;/a&gt;Helpful Resources&lt;/h2&gt;&lt;p&gt;The above descriptions were sourced based on the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://wiki.debian.org/SystemGroups&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SystemGroups - Debian Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://wiki.ubuntu.com/Security/Privileges&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Privileges - Ubuntu Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Molloy, Derek.  &lt;em&gt;Exploring Raspberry Pi: Interfacing to the Real World with Embedded Linux.&lt;/em&gt; &lt;a href=&quot;https://books.google.com/books?id=ro0gCwAAQBAJ&amp;amp;pg=PA270&amp;amp;lpg=PA270&amp;amp;source=bl&amp;amp;ots=0T50hVUvy5&amp;amp;sig=6n_Hi0U2rCyu7pvx5LUqXJfDhbE&amp;amp;hl=en&amp;amp;sa=X&amp;amp;ved=0ahUKEwjG6qGorNrXAhUNRN8KHcndBDQQ6AEISTAE#v=onepage&amp;amp;q&amp;amp;f=false&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Page 270&lt;/a&gt;. &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org/forums/viewtopic.php?p=158107#p158107&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;I2C group discussion on Raspberry Pi forums&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;In setting up my Raspberry Pi for a home fileshare, I noticed the &lt;code&gt;pi&lt;/code&gt; user is a part of several default groups.  These are:&lt;/
+    
+    </summary>
+    
+      <category term="electronics" scheme="http://www.apnorton.com/blog/categories/electronics/"/>
+    
+      <category term="raspberry-pi" scheme="http://www.apnorton.com/blog/categories/electronics/raspberry-pi/"/>
+    
+    
+      <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
+    
+      <category term="general-computing" scheme="http://www.apnorton.com/blog/tags/general-computing/"/>
+    
+      <category term="hardware" scheme="http://www.apnorton.com/blog/tags/hardware/"/>
+    
+  </entry>
   
   <entry>
     <title>How to Request a Regrade</title>
@@ -614,9 +724,9 @@ D_n &amp;amp;= (-1)^n \sum_k\binom{n}{k} (-1)^k k! \\
     
       <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
     
-      <category term="books" scheme="http://www.apnorton.com/blog/tags/books/"/>
-    
       <category term="general-computing" scheme="http://www.apnorton.com/blog/tags/general-computing/"/>
+    
+      <category term="books" scheme="http://www.apnorton.com/blog/tags/books/"/>
     
   </entry>
   

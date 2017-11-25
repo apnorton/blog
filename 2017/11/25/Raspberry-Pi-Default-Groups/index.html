@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: computer-science | apnorton | blog</title>
+  <title>Raspberry Pi Default Groups | apnorton | blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="apnorton | blog">
-<meta property="og:url" content="http://www.apnorton.com/blog/categories/computer-science/index.html">
+  <meta name="description" content="In setting up my Raspberry Pi for a home fileshare, I noticed the pi user is a part of several default groups.  These are:
+1pi adm dialout cdrom sudo audio video plugdev games users input netdev gpio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Raspberry Pi Default Groups">
+<meta property="og:url" content="http://www.apnorton.com/blog/2017/11/25/Raspberry-Pi-Default-Groups/index.html">
 <meta property="og:site_name" content="apnorton | blog">
-<meta property="og:description">
+<meta property="og:description" content="In setting up my Raspberry Pi for a home fileshare, I noticed the pi user is a part of several default groups.  These are:
+1pi adm dialout cdrom sudo audio video plugdev games users input netdev gpio">
+<meta property="og:updated_time" content="2017-11-25T18:56:11.645Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="apnorton | blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Raspberry Pi Default Groups">
+<meta name="twitter:description" content="In setting up my Raspberry Pi for a home fileshare, I noticed the pi user is a part of several default groups.  These are:
+1pi adm dialout cdrom sudo audio video plugdev games users input netdev gpio">
 <meta name="twitter:creator" content="@_apnorton">
   
     <link rel="alternative" href="/blog/atom.xml" title="apnorton | blog" type="application/atom+xml">
@@ -75,183 +79,148 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/" class="archive-article-date">
-  <time datetime="2017-03-01T04:05:39.000Z" itemprop="datePublished">Feb 28</time>
+        <section id="main"><article id="post-Raspberry-Pi-Default-Groups" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2017/11/25/Raspberry-Pi-Default-Groups/" class="article-date">
+  <time datetime="2017-11-25T18:54:28.000Z" itemprop="datePublished">2017-11-25</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/electronics/">electronics</a>►<a class="article-category-link" href="/blog/categories/electronics/raspberry-pi/">raspberry-pi</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/">How I wrote a GroupMe Chatbot in 24 hours</a>
+    <h1 class="article-title" itemprop="name">
+      Raspberry Pi Default Groups
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2017/01/04/Machine-Learning-with-the-Surface-Book/" class="archive-article-date">
-  <time datetime="2017-01-04T20:32:45.000Z" itemprop="datePublished">Jan 4</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2017/01/04/Machine-Learning-with-the-Surface-Book/">TensorFlow with the Surface Book</a>
-    </h1>
-  
+        <p>In setting up my Raspberry Pi for a home fileshare, I noticed the <code>pi</code> user is a part of several default groups.  These are:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pi adm dialout cdrom sudo <span class="selector-tag">audio</span> <span class="selector-tag">video</span> plugdev games users <span class="selector-tag">input</span> netdev gpio i2c spi</span><br></pre></td></tr></table></figure>
+<p>(I’m using the 2017-09-07 image of Raspbian Stretch Lite.)</p>
+<p>This looked like a lot of groups to me!  To make sure my new user only has the minimum permissions needed, let’s look at the what each group is and why it’s there.</p>
+<h2 id="Group-Descriptions"><a href="#Group-Descriptions" class="headerlink" title="Group Descriptions"></a>Group Descriptions</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">pi</td>
+<td style="text-align:left">User-specific group.  A group is automatically created for each new user; you can ignore this.</td>
+</tr>
+<tr>
+<td style="text-align:left">adm</td>
+<td style="text-align:left">Allows access to log files in <code>/var/log</code> and using <code>xconsole</code></td>
+</tr>
+<tr>
+<td style="text-align:left">dialout</td>
+<td style="text-align:left">Allows access to serial ports/modem reconfiguration, etc.</td>
+</tr>
+<tr>
+<td style="text-align:left">cdrom</td>
+<td style="text-align:left">Uncreatively, this group enables access to optical drives.</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo</td>
+<td style="text-align:left">Enables <code>sudo</code> access for the user.</td>
+</tr>
+<tr>
+<td style="text-align:left">audio</td>
+<td style="text-align:left">Allows access to audio devices like microphones and soundcards</td>
+</tr>
+<tr>
+<td style="text-align:left">video</td>
+<td style="text-align:left">Allows graphics card/webcam access.</td>
+</tr>
+<tr>
+<td style="text-align:left">plugdev</td>
+<td style="text-align:left">Enables access to external storage devices</td>
+</tr>
+<tr>
+<td style="text-align:left">games</td>
+<td style="text-align:left">I’m unsure of this.  No files belong to this group by default, and I cannot find references to it online.</td>
+</tr>
+<tr>
+<td style="text-align:left">users</td>
+<td style="text-align:left">Appears to be a Pi-specific group enabling access to <code>/opt/vc/src/hello_pi/</code> directory and contained files.</td>
+</tr>
+<tr>
+<td style="text-align:left">input</td>
+<td style="text-align:left">Appears to give access to the <code>/dev/input/mice</code> folder and nothing else.</td>
+</tr>
+<tr>
+<td style="text-align:left">netdev</td>
+<td style="text-align:left">Enables access to network interfaces</td>
+</tr>
+<tr>
+<td style="text-align:left">gpio</td>
+<td style="text-align:left">Pi-specific group for GPIO pin access.</td>
+</tr>
+<tr>
+<td style="text-align:left">i2c</td>
+<td style="text-align:left">Similar to the above, but for I2C access. Generated after installing <code>i2c-tools</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left">spi</td>
+<td style="text-align:left">Similar to the above, but for the SPI bus.</td>
+</tr>
+</tbody>
+</table>
+<p>So, based on my application (and future use of the Pi), I’m not adding the <code>cdrom</code>, <code>games</code>, and <code>users</code> groups to my new user.</p>
+<h2 id="Helpful-Resources"><a href="#Helpful-Resources" class="headerlink" title="Helpful Resources"></a>Helpful Resources</h2><p>The above descriptions were sourced based on the following:</p>
+<ul>
+<li><a href="https://wiki.debian.org/SystemGroups" target="_blank" rel="external">SystemGroups - Debian Wiki</a></li>
+<li><a href="https://wiki.ubuntu.com/Security/Privileges" target="_blank" rel="external">Privileges - Ubuntu Wiki</a></li>
+<li>Molloy, Derek.  <em>Exploring Raspberry Pi: Interfacing to the Real World with Embedded Linux.</em> <a href="https://books.google.com/books?id=ro0gCwAAQBAJ&amp;pg=PA270&amp;lpg=PA270&amp;source=bl&amp;ots=0T50hVUvy5&amp;sig=6n_Hi0U2rCyu7pvx5LUqXJfDhbE&amp;hl=en&amp;sa=X&amp;ved=0ahUKEwjG6qGorNrXAhUNRN8KHcndBDQQ6AEISTAE#v=onepage&amp;q&amp;f=false" target="_blank" rel="external">Page 270</a>. </li>
+<li><a href="https://www.raspberrypi.org/forums/viewtopic.php?p=158107#p158107" target="_blank" rel="external">I2C group discussion on Raspberry Pi forums</a> </li>
+</ul>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.apnorton.com/blog/blog/2017/11/25/Raspberry-Pi-Default-Groups/" data-id="cjafpawoe002r4cgcyryjcgcr" class="article-share-link">Share</a>
+      
+        <a href="http://www.apnorton.com/blog/blog/2017/11/25/Raspberry-Pi-Default-Groups/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/" class="archive-article-date">
-  <time datetime="2016-12-20T01:51:55.000Z" itemprop="datePublished">Dec 19</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2016/12/19/Visualizing-Multidimensional-Data-in-Python/">Visualizing Multidimensional Data in Python</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/computer-science/">computer-science</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/general-computing/">general-computing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hardware/">hardware</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/" class="archive-article-date">
-  <time datetime="2016-03-08T22:11:35.000Z" itemprop="datePublished">Mar 8</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2016/03/08/Visualizing-Graphs-in-Program-Output/">Visualizing Graphs in Program Output</a>
-    </h1>
   
+    <a href="/blog/2017/07/04/How-to-Request-a-Regrade/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How to Request a Regrade</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2015/10/15/Deranged-Exams-An-ICPC-Problem/" class="archive-article-date">
-  <time datetime="2015-10-16T00:24:00.000Z" itemprop="datePublished">Oct 15</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2015/10/15/Deranged-Exams-An-ICPC-Problem/">Deranged Exams: An ICPC Problem</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2014" class="archive-year">2014</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2014/07/14/How-to-Learn-Haskell/" class="archive-article-date">
-  <time datetime="2014-07-15T00:55:08.000Z" itemprop="datePublished">Jul 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2014/07/14/How-to-Learn-Haskell/">How to Learn Haskell</a>
-    </h1>
-  
 
-    </header>
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2014/06/09/Big-O-notation-An-Introduction-to-Asymptotics-of-Loops/" class="archive-article-date">
-  <time datetime="2014-06-10T03:28:45.000Z" itemprop="datePublished">Jun 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2014/06/09/Big-O-notation-An-Introduction-to-Asymptotics-of-Loops/">&quot;Big-O&quot; notation: An Introduction to Asymptotics of Loops</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+</section>
 </section>
         
           <aside id="sidebar">
@@ -341,11 +310,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'apnorton';
   
+  var disqus_url = 'http://www.apnorton.com/blog/blog/2017/11/25/Raspberry-Pi-Default-Groups/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
