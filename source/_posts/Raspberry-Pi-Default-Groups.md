@@ -20,6 +20,8 @@ pi adm dialout cdrom sudo audio video plugdev games users input netdev gpio i2c 
 
 This looked like a lot of groups to me!  To make sure my new user only has the minimum permissions needed, let's look at the what each group is and why it's there.
 
+<!-- more -->
+
 ## Group Descriptions
 
 | Name | Notes |
