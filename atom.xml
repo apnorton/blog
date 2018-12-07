@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://www.apnorton.com/blog/"/>
-  <updated>2017-11-25T19:09:37.770Z</updated>
+  <updated>2018-12-07T07:35:14.354Z</updated>
   <id>http://www.apnorton.com/blog/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Meeting Don Knuth</title>
+    <link href="http://www.apnorton.com/blog/2018/12/07/Meeting-Don-Knuth/"/>
+    <id>http://www.apnorton.com/blog/2018/12/07/Meeting-Don-Knuth/</id>
+    <published>2018-12-07T07:35:14.000Z</published>
+    <updated>2018-12-07T07:35:14.354Z</updated>
+    
+    <content type="html">&lt;p&gt;Everyone has heroes, but not everyone gets to meet them.  This past Tuesday, I was fortunate to meet one of mine — Don Knuth.  If you are in computer science and don’t know who Don Knuth is, I highly recommend you take a break from this post and &lt;a href=&quot;https://amturing.acm.org/award_winners/knuth_1013846.cfm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;do a bit of reading about him&lt;/a&gt;.  He is most well-known for authoring his (still in progress) &lt;em&gt;Art of Computer Programming&lt;/em&gt;, a compendium of all kinds of information on algorithms, but his contributions to computer science and software development reach far beyond that.  He invented TeX (precursor to LaTeX), wrote &lt;em&gt;Concrete Mathematics&lt;/em&gt; (a great mathematical foundations of computer science book), and received a Turing award.&lt;/p&gt;
+&lt;img src=&quot;/blog/2018/12/07/Meeting-Don-Knuth/knuth.jpg&quot; alt=&quot;Me with Don Knuth&quot; title=&quot;Me with Don Knuth&quot;&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;I’ve been enamoured with Knuth’s work ever since I received &lt;em&gt;Concrete Mathematics&lt;/em&gt; as a birthday present in my teens.  His level of detail and precision in both his proofs and programming are second to none, in my eyes.  Thus, when I saw that he gives a yearly public lecture at Stanford, I knew I had to find a way to attend.  So, this week I flew to California to go hear his twenty-fourth annual Christmas lecture, which was on new applications of Dancing Links that he has found (and will be covered in &lt;em&gt;AoCP Volume 4B&lt;/em&gt;, yet to be published).  After the lecture, he signed a book of his and let me take a picture with him.  When I told him that his work greatly inspired me, he encouraged me to attempt to find errors and report them, participating in his &lt;a href=&quot;https://en.wikipedia.org/wiki/Knuth_reward_check&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;reward check program&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Some people would think it crazy to fly across the country to hear one person speak for an hour and a half, but it honestly was worth it.  I got to meet a towering giant in the field of CS who has inspired me in many ways. &lt;/p&gt;
+&lt;img src=&quot;/blog/2018/12/07/Meeting-Don-Knuth/knuth_autograph.jpg&quot; alt=&quot;A newly-signed copy of Art of Computer Programming&quot; title=&quot;A newly-signed copy of Art of Computer Programming&quot;&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Everyone has heroes, but not everyone gets to meet them.  This past Tuesday, I was fortunate to meet one of mine — Don Knuth.  If you are in computer science and don’t know who Don Knuth is, I highly recommend you take a break from this post and &lt;a href=&quot;https://amturing.acm.org/award_winners/knuth_1013846.cfm&quot;&gt;do a bit of reading about him&lt;/a&gt;.  He is most well-known for authoring his (still in progress) &lt;em&gt;Art of Computer Programming&lt;/em&gt;, a compendium of all kinds of information on algorithms, but his contributions to computer science and software development reach far beyond that.  He invented TeX (precursor to LaTeX), wrote &lt;em&gt;Concrete Mathematics&lt;/em&gt; (a great mathematical foundations of computer science book), and received a Turing award.&lt;/p&gt;
+&lt;img src=&quot;/blog/2018/12/07/Meeting-Don-Knuth/knuth.jpg&quot; alt=&quot;Me with Don Knuth&quot; title=&quot;Me with Don Knuth&quot;&gt;
+    
+    </summary>
+    
+      <category term="fun" scheme="http://www.apnorton.com/blog/categories/fun/"/>
+    
+    
+      <category term="computer-science" scheme="http://www.apnorton.com/blog/tags/computer-science/"/>
+    
+      <category term="life" scheme="http://www.apnorton.com/blog/tags/life/"/>
+    
+      <category term="math" scheme="http://www.apnorton.com/blog/tags/math/"/>
+    
+      <category term="books" scheme="http://www.apnorton.com/blog/tags/books/"/>
+    
+  </entry>
   
   <entry>
     <title>Raspberry Pi Default Groups</title>
